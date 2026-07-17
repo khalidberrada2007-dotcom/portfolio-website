@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Khalid Barradah, étudiant en développement digital et développeur web junior.">
+  <title>Khalid Barradah | Développeur Web Junior</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="container nav-bar">
+      <a href="#home" class="brand">Khalid Barradah</a>
+      <ul>
+        <li><a href="#home" class="nav-link active">Accueil</a></li>
+        <li><a href="#about" class="nav-link">À propos</a></li>
+        <li><a href="#skills" class="nav-link">Compétences</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container hero">
+        <div class="hero-text">
+          <p class="eyebrow">Étudiant en Développement Digital • Développeur Web Junior</p>
+          <h1>Bonjour, je suis <span>Khalid Barradah</span></h1>
+          <h2>Je crée des expériences web modernes, propres et performantes.</h2>
+          <p>
+            Passionné par Python, HTML, CSS, JavaScript et la logique des applications web,
+            je développe des projets concrets et j'aime transformer des idées en solutions utiles.
+          </p>
+          <div class="buttons">
+            <a href="#projects" class="btn">Voir mes projets</a>
+            <a href="KHALID_BARRADAH_CV.pdf" class="btn btn-secondary" download>Télécharger mon CV</a>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="photo.png" alt="Khalid Barradah" onclick="openImage()" onerror="this.style.display='none'; this.parentElement.querySelector('.image-fallback').style.display='flex';">
+          <div class="image-fallback">Khalid Barradah</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">À propos</p>
+          <h2>Je transforme l'apprentissage en réalisations concrètes.</h2>
+        </div>
+
+        <div class="about-grid">
+          <p>
+            Étudiant en première année Développement Digital à l'OFPPT, titulaire d'un baccalauréat
+            Sciences Mathématiques B obtenu en 2025. J'aime concevoir des interfaces élégantes et
+            développer des solutions simples, efficaces et maintenables.
+          </p>
+
+          <div class="highlight-card">
+            <h3>Ce que j'aime faire</h3>
+            <ul>
+              <li>Développer des interfaces modernes et responsives</li>
+              <li>Créer des applications avec Python et JavaScript</li>
+              <li>Résoudre des problèmes concrets avec un code clair</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Compétences</p>
+          <h2>Des bases solides pour construire de vrais projets.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Frontend</h3>
+            <p>HTML5, CSS3, JavaScript, conception d'interfaces modernes.</p>
+          </article>
+          <article class="skill-card">
+            <h3>Backend</h3>
+            <p>Python, logique applicative, manipulation de données et automatisation.</p>
+          </article>
+          <article class="skill-card">
+            <h3>Outils</h3>
+            <p>Git, GitHub, travail organisé et projets bien structurés.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Projets</p>
+          <h2>Quelques réalisations récentes.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <img class="project-image" src="StageMaroc.png" alt="Projet StageMaroc" loading="lazy">
+            <h3>StageMaroc</h3>
+            <p>
+              StageMaroc est une plateforme permettant aux stagiaires de rechercher des offres
+              de stages et aux entreprises de publier et gérer leurs offres.
+            </p>
+            <a href="https://github.com/khalidberrada2007-dotcom/StageMaroc" target="_blank" rel="noopener noreferrer">
+              Voir sur GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="GestionDesStagiaires.png" alt="Projet Gestion des Stagiaires" loading="lazy">
+            <h3>Gestion des Stagiaires OFPPT</h3>
+            <p>
+              Application console Python orientée objet avec gestion des stagiaires,
+              absences, sauvegarde JSON et export CSV.
+            </p>
+            <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-stagiaires" target="_blank" rel="noopener noreferrer">
+              Voir sur GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="CalculatriceWebInteractive.png" alt="Projet Calculatrice Web Interactive" loading="lazy">
+            <h3>Calculatrice Web Interactive</h3>
+            <p>
+              Application front-end développée avec HTML5, CSS3 et JavaScript pour
+              proposer une expérience simple et fluide.
+            </p>
+            <a href="https://github.com/khalidberrada2007-dotcom/Calculatrice-Web" target="_blank" rel="noopener noreferrer">
+              Voir sur GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="GestionDesCandidats.png" alt="Projet Gestion des Candidats" loading="lazy">
+            <h3>Gestion des Candidats</h3>
+            <p>
+              Une application web CRUD simple développée avec HTML, CSS, PHP et MySQL permettant
+              de gérer les informations des candidats (ajout, affichage, modification et suppression).
+            </p>
+            <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" target="_blank" rel="noopener noreferrer">
+              Voir sur GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="contact-card">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>Discutons de votre prochain projet.</h2>
+          </div>
+
+          <div class="social">
+            <a href="https://linkedin.com/in/khalid-barradah" class="social-link" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/khalidberrada2007-dotcom" class="social-link" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <details class="email-menu">
+              <summary class="social-link email-trigger">
+                <i class="fas fa-envelope"></i> Email
+              </summary>
+              <div class="email-options" id="email-options" role="menu" aria-label="Adresses e-mail">
+                <a href="mailto:khalidberrada2007@gmail.com" role="menuitem">khalidberrada2007@gmail.com</a>
+                <a href="mailto:baradak087@gmail.com" role="menuitem">baradak087@gmail.com</a>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Khalid Barradah. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <div id="imageModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Fermer la fenêtre" onclick="closeImage()">×</button>
+      <div class="modal-image">
+        <img src="photo.png" alt="Portrait de Khalid Barradah" onerror="this.style.display='none'; this.parentElement.querySelector('.image-fallback').style.display='flex';">
+        <div class="image-fallback">Khalid Barradah</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
