@@ -1,206 +1,738 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Khalid Barradah, étudiant en développement digital et développeur web junior.">
+  <meta name="description" content="Portfolio de Khalid Barradah — Développeur Web Junior spécialisé en Python, PHP, JavaScript. À la recherche d'un stage de fin d'études à Casablanca.">
+  <meta name="keywords" content="Khalid Barradah, développeur web, portfolio, stage, Casablanca, Python, PHP, JavaScript, ISTA">
+  <meta name="author" content="Khalid Barradah">
+  <meta name="robots" content="index, follow">
   <title>Khalid Barradah | Développeur Web Junior</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://portfolio-ecru-three-47.vercel.app">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Khalid Barradah | Développeur Web Junior">
+  <meta property="og:description" content="Étudiant en développement digital — Python, PHP, JavaScript. Stage de fin d'études.">
+  <meta property="og:image" content="photo.png">
+  <meta property="og:url" content="https://portfolio-ecru-three-47.vercel.app">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Khalid Barradah | Développeur Web Junior">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1520'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' fill='%23e3a63a' text-anchor='middle'%3EKB%3C/text%3E%3C/svg%3E">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khalid Barradah",
+    "jobTitle": "Développeur Web Junior",
+    "url": "https://portfolio-ecru-three-47.vercel.app",
+    "email": "khalidberrada2007@gmail.com",
+    "sameAs": [
+      "https://github.com/khalidberrada2007-dotcom",
+      "https://linkedin.com/in/khalid-barradah"
+    ],
+    "alumniOf": "ISTA HH1 — Développement Digital",
+    "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Python", "PHP", "MySQL"]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav class="container nav-bar">
-      <a href="#home" class="brand">Khalid Barradah</a>
-      <ul>
-        <li><a href="#home" class="nav-link active">Accueil</a></li>
-        <li><a href="#about" class="nav-link">À propos</a></li>
-        <li><a href="#skills" class="nav-link">Compétences</a></li>
-        <li><a href="#projects" class="nav-link">Projets</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero-section">
-      <div class="container hero">
-        <div class="hero-text">
-          <p class="eyebrow">Étudiant en Développement Digital • Développeur Web Junior</p>
-          <h1>Bonjour, je suis <span>Khalid Barradah</span></h1>
-          <h2>Je crée des expériences web modernes, propres et performantes.</h2>
-          <p>
-            Passionné par Python, HTML, CSS, JavaScript et la logique des applications web,
-            je développe des projets concrets et j'aime transformer des idées en solutions utiles.
-          </p>
-          <div class="buttons">
-            <a href="#projects" class="btn">Voir mes projets</a>
-            <a href="KHALID_BARRADAH_CV.pdf" class="btn btn-secondary" download>Télécharger mon CV</a>
-          </div>
-        </div>
-
-        <div class="photo">
-          <img src="photo.png" alt="Khalid Barradah" onclick="openImage()" onerror="this.style.display='none'; this.parentElement.querySelector('.image-fallback').style.display='flex';">
-          <div class="image-fallback">Khalid Barradah</div>
-        </div>
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" class="preloader" role="status" aria-label="Chargement">
+    <div class="preloader-content">
+      <div class="preloader-terminal">
+        <span class="preloader-line" data-text="Initialisation du portfolio..."></span>
+        <span class="preloader-line" data-text="Chargement des competences..."></span>
+        <span class="preloader-line" data-text="Pret."></span>
       </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">À propos</p>
-          <h2>Je transforme l'apprentissage en réalisations concrètes.</h2>
-        </div>
-
-        <div class="about-grid">
-          <p>
-            Étudiant en première année Développement Digital à l'OFPPT, titulaire d'un baccalauréat
-            Sciences Mathématiques B obtenu en 2025. J'aime concevoir des interfaces élégantes et
-            développer des solutions simples, efficaces et maintenables.
-          </p>
-
-          <div class="highlight-card">
-            <h3>Ce que j'aime faire</h3>
-            <ul>
-              <li>Développer des interfaces modernes et responsives</li>
-              <li>Créer des applications avec Python et JavaScript</li>
-              <li>Résoudre des problèmes concrets avec un code clair</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Compétences</p>
-          <h2>Des bases solides pour construire de vrais projets.</h2>
-        </div>
-
-        <div class="skills-grid">
-          <article class="skill-card">
-            <h3>Frontend</h3>
-            <p>HTML5, CSS3, JavaScript, conception d'interfaces modernes.</p>
-          </article>
-          <article class="skill-card">
-            <h3>Backend</h3>
-            <p>Python, logique applicative, manipulation de données et automatisation.</p>
-          </article>
-          <article class="skill-card">
-            <h3>Outils</h3>
-            <p>Git, GitHub, travail organisé et projets bien structurés.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Projets</p>
-          <h2>Quelques réalisations récentes.</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <img class="project-image" src="StageMaroc.png" alt="Projet StageMaroc" loading="lazy">
-            <h3>StageMaroc</h3>
-            <p>
-              StageMaroc est une plateforme permettant aux stagiaires de rechercher des offres
-              de stages et aux entreprises de publier et gérer leurs offres.
-            </p>
-            <a href="https://github.com/khalidberrada2007-dotcom/StageMaroc" target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub <i class="fas fa-arrow-right"></i>
-            </a>
-          </article>
-
-          <article class="project-card">
-            <img class="project-image" src="GestionDesStagiaires.png" alt="Projet Gestion des Stagiaires" loading="lazy">
-            <h3>Gestion des Stagiaires OFPPT</h3>
-            <p>
-              Application console Python orientée objet avec gestion des stagiaires,
-              absences, sauvegarde JSON et export CSV.
-            </p>
-            <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-stagiaires" target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub <i class="fas fa-arrow-right"></i>
-            </a>
-          </article>
-
-          <article class="project-card">
-            <img class="project-image" src="CalculatriceWebInteractive.png" alt="Projet Calculatrice Web Interactive" loading="lazy">
-            <h3>Calculatrice Web Interactive</h3>
-            <p>
-              Application front-end développée avec HTML5, CSS3 et JavaScript pour
-              proposer une expérience simple et fluide.
-            </p>
-            <a href="https://github.com/khalidberrada2007-dotcom/Calculatrice-Web" target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub <i class="fas fa-arrow-right"></i>
-            </a>
-          </article>
-
-          <article class="project-card">
-            <img class="project-image" src="GestionDesCandidats.png" alt="Projet Gestion des Candidats" loading="lazy">
-            <h3>Gestion des Candidats</h3>
-            <p>
-              Une application web CRUD simple développée avec HTML, CSS, PHP et MySQL permettant
-              de gérer les informations des candidats (ajout, affichage, modification et suppression).
-            </p>
-            <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub <i class="fas fa-arrow-right"></i>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <div class="contact-card">
-          <div class="section-heading">
-            <p class="eyebrow">Contact</p>
-            <h2>Discutons de votre prochain projet.</h2>
-          </div>
-
-          <div class="social">
-            <a href="https://linkedin.com/in/khalid-barradah" class="social-link" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/khalidberrada2007-dotcom" class="social-link" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <details class="email-menu">
-              <summary class="social-link email-trigger">
-                <i class="fas fa-envelope"></i> Email
-              </summary>
-              <div class="email-options" id="email-options" role="menu" aria-label="Adresses e-mail">
-                <a href="mailto:khalidberrada2007@gmail.com" role="menuitem">khalidberrada2007@gmail.com</a>
-                <a href="mailto:baradak087@gmail.com" role="menuitem">baradak087@gmail.com</a>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Khalid Barradah. Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <div id="imageModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" type="button" aria-label="Fermer la fenêtre" onclick="closeImage()">×</button>
-      <div class="modal-image">
-        <img src="photo.png" alt="Portrait de Khalid Barradah" onerror="this.style.display='none'; this.parentElement.querySelector('.image-fallback').style.display='flex';">
-        <div class="image-fallback">Khalid Barradah</div>
+      <div class="preloader-bar">
+        <div class="preloader-bar-fill" id="preloader-bar"></div>
       </div>
     </div>
   </div>
 
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header" id="header">
+    <nav class="container nav-bar" role="navigation" aria-label="Navigation principale">
+      <a href="#home" class="brand" aria-label="Retour à l'accueil">
+        <span class="brand-dot"></span>
+        khalid.barradah
+      </a>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#home" class="nav-link active" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">À propos</a></li>
+        <li role="none"><a href="#skills" class="nav-link" role="menuitem">Compétences</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projets</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Changer le thème">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <button type="button" id="cmdkTrigger" class="icon-btn cmdk-btn" aria-label="Ouvrir la palette de commandes">
+          <i class="fas fa-command"></i>
+          <span class="cmdk-hint"><kbd>⌘</kbd><kbd>K</kbd></span>
+        </button>
+        <button type="button" class="menu-toggle icon-btn" id="menuToggle" aria-label="Menu mobile" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- -------- HERO -------- -->
+    <section id="home" class="hero-section">
+      <canvas id="particlesCanvas" class="particles-canvas" aria-hidden="true"></canvas>
+      <div class="container hero">
+        <div class="hero-text fade-up">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Disponible pour un stage
+          </div>
+          <p class="eyebrow">// développeur web junior — casablanca, ma</p>
+          <h1 class="hero-title">
+            Bonjour, je suis <br>
+            <span class="gradient-text">Khalid Barradah</span>
+          </h1>
+          <div class="hero-typing-wrapper">
+            <span id="typingPrefix" class="typing-prefix">Je construis </span>
+            <span id="typingText" class="typing-text"></span>
+            <span class="typing-cursor" id="typingCursor">|</span>
+          </div>
+          <p class="hero-description">
+            Étudiant en développement digital, je transforme des idées en applications complètes
+            — de la logique métier jusqu'à l'interface. À la recherche d'un stage pour mettre
+            mes compétences au service d'une équipe passionnante.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              Voir mes projets
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="KHALID_BARRADAH_CV.pdf" class="btn btn-outline" download>
+              <i class="fas fa-download"></i>
+              Télécharger mon CV
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-value" data-count="4">0</span>
+              <span class="hero-stat-label">Projets</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value" data-count="2">0</span>
+              <span class="hero-stat-label">Technos</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value" data-count="100">0</span>
+              <span class="hero-stat-label">% Motivation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-up" data-delay="200">
+          <div class="terminal-card" id="heroTerminal">
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title">khalid@portfolio:~</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div id="terminalOutput" class="terminal-output"></div>
+              <div class="terminal-input-line" id="terminalInputLine" hidden>
+                <span class="terminal-prompt">$</span>
+                <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal interactif — tapez une commande">
+              </div>
+            </div>
+            <div class="terminal-footer">
+              <span class="terminal-hint">Tapez <kbd>help</kbd> pour les commandes</span>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="floating-badge badge-1">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="floating-badge badge-2">
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="floating-badge badge-3">
+            <i class="fab fa-php"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- ABOUT -------- -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="eyebrow">// à propos</p>
+          <h2>Je transforme l'apprentissage en <span class="gradient-text">réalisations concrètes.</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-content fade-up">
+            <p class="about-text">
+              Étudiant en première année <strong>Développement Digital</strong> à l'ISTA HH1 Casablanca,
+              titulaire d'un baccalauréat Sciences Mathématiques B (mention Bien). Je conçois des
+              interfaces claires et des solutions robustes — du script Python à l'application web complète.
+            </p>
+            <p class="about-text">
+              Mon expérience chez McDonald's m'a appris la <strong>rigueur</strong>, le
+              <strong>travail en équipe</strong> et la gestion sous pression — des soft skills
+              que j'applique aujourd'hui dans chaque projet.
+            </p>
+
+            <div class="about-info-grid">
+              <div class="about-info-item">
+                <span class="info-icon"><i class="fas fa-map-pin"></i></span>
+                <div>
+                  <span class="info-label">Localisation</span>
+                  <span class="info-value">Casablanca, Maroc</span>
+                </div>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon"><i class="fas fa-graduation-cap"></i></span>
+                <div>
+                  <span class="info-label">Formation</span>
+                  <span class="info-value">ISTA HH1 — Développement Digital</span>
+                </div>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon"><i class="fas fa-calendar"></i></span>
+                <div>
+                  <span class="info-label">Niveau</span>
+                  <span class="info-value">1ère année (2025–2026)</span>
+                </div>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon"><i class="fas fa-trophy"></i></span>
+                <div>
+                  <span class="info-label">Bac</span>
+                  <span class="info-value">Sciences Math B — 14,97/20</span>
+                </div>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon"><i class="fas fa-briefcase"></i></span>
+                <div>
+                  <span class="info-label">Statut</span>
+                  <span class="info-value">Recherche stage fin d'études</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual fade-up" data-delay="150">
+            <div class="photo-card">
+              <div class="photo-frame">
+                <img src="photo.png" alt="Khalid Barradah" loading="lazy" onclick="openImageModal()">
+                <div class="photo-glare"></div>
+              </div>
+              <div class="photo-status">
+                <span class="status-dot"></span>
+                Disponible
+              </div>
+            </div>
+
+            <div class="env-block">
+              <div class="env-header">
+                <i class="fas fa-terminal"></i>
+                <span>~/khalid/profil.env</span>
+              </div>
+              <div class="env-body">
+                <div class="env-line">
+                  <span class="env-key">export</span> <span class="env-var">LOCATION</span>=<span class="env-val">"Casablanca, Maroc"</span>
+                </div>
+                <div class="env-line">
+                  <span class="env-key">export</span> <span class="env-var">FORMATION</span>=<span class="env-val">"ISTA HH1 — Dev Digital"</span>
+                </div>
+                <div class="env-line">
+                  <span class="env-key">export</span> <span class="env-var">STATUS</span>=<span class="env-val">"Recherche stage"</span>
+                </div>
+                <div class="env-line">
+                  <span class="env-key">export</span> <span class="env-var">MOTIVATION</span>=<span class="env-val">∞</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- SKILLS -------- -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="eyebrow">// compétences</p>
+          <h2>Des bases solides pour construire <span class="gradient-text">de vrais projets.</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-filter fade-up">
+          <button type="button" class="filter-btn active" data-filter="all">Tous</button>
+          <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
+          <button type="button" class="filter-btn" data-filter="backend">Backend</button>
+          <button type="button" class="filter-btn" data-filter="tools">Outils</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Frontend -->
+          <div class="skill-card fade-up" data-category="frontend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fab fa-html5"></i></span>
+              <h3>HTML5</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+            <span class="skill-level">Avancé</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="frontend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fab fa-css3-alt"></i></span>
+              <h3>CSS3</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+            <span class="skill-level">Avancé</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="frontend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fab fa-js"></i></span>
+              <h3>JavaScript</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+            <span class="skill-level">Intermédiaire</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="frontend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fas fa-mobile-alt"></i></span>
+              <h3>Responsive</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+            <span class="skill-level">Avancé</span>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-card fade-up" data-category="backend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fab fa-python"></i></span>
+              <h3>Python (POO)</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+            <span class="skill-level">Intermédiaire+</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="backend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fab fa-php"></i></span>
+              <h3>PHP</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="70"></div>
+            </div>
+            <span class="skill-level">Intermédiaire</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="backend">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fas fa-database"></i></span>
+              <h3>MySQL / SQL</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+            <span class="skill-level">Intermédiaire</span>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-card fade-up" data-category="tools">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fab fa-git-alt"></i></span>
+              <h3>Git & GitHub</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+            <span class="skill-level">Intermédiaire</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="tools">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fas fa-server"></i></span>
+              <h3>VirtualBox</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="60"></div>
+            </div>
+            <span class="skill-level">Débutant</span>
+          </div>
+
+          <div class="skill-card fade-up" data-category="tools">
+            <div class="skill-header">
+              <span class="skill-icon"><i class="fas fa-shield-alt"></i></span>
+              <h3>Cybersécurité</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="50"></div>
+            </div>
+            <span class="skill-level">Initiation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- PROJECTS -------- -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="eyebrow">// projets</p>
+          <h2>Quelques <span class="gradient-text">réalisations récentes.</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+
+          <article class="project-card fade-up" data-repo="khalidberrada2007-dotcom/StageMaroc" data-tags="php,mysql,js">
+            <div class="project-card-header">
+              <div class="project-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="project-lang">
+                <i class="fab fa-php"></i>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="StageMaroc.png" alt="StageMaroc - Plateforme de stages" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://github.com/khalidberrada2007-dotcom/StageMaroc" target="_blank" rel="noopener" class="project-overlay-link">
+                  <i class="fab fa-github"></i> Voir le code
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="repo-stats" aria-live="polite"></div>
+              <h3>StageMaroc</h3>
+              <p>Plateforme de mise en relation stagiaires-entreprises avec publication d'offres et gestion des candidatures.</p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <a href="https://github.com/khalidberrada2007-dotcom/StageMaroc" target="_blank" rel="noopener" class="project-link">
+                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up" data-repo="khalidberrada2007-dotcom/Gestion-des-stagiaires" data-tags="python,poo">
+            <div class="project-card-header">
+              <div class="project-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="project-lang">
+                <i class="fab fa-python"></i>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="GestionDesStagiaires.png" alt="Gestion des Stagiaires OFPPT" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-stagiaires" target="_blank" rel="noopener" class="project-overlay-link">
+                  <i class="fab fa-github"></i> Voir le code
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="repo-stats" aria-live="polite"></div>
+              <h3>Gestion des Stagiaires OFPPT</h3>
+              <p>Application console Python orientée objet : gestion des stagiaires, suivi des absences, sauvegarde JSON et export CSV.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">POO</span>
+                <span class="tag">JSON/CSV</span>
+              </div>
+              <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-stagiaires" target="_blank" rel="noopener" class="project-link">
+                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up" data-repo="khalidberrada2007-dotcom/Calculatrice-Web" data-tags="html,css,js,frontend">
+            <div class="project-card-header">
+              <div class="project-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="project-lang">
+                <i class="fab fa-js"></i>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="CalculatriceWebInteractive.png" alt="Calculatrice Web Interactive" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://github.com/khalidberrada2007-dotcom/Calculatrice-Web" target="_blank" rel="noopener" class="project-overlay-link">
+                  <i class="fab fa-github"></i> Voir le code
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="repo-stats" aria-live="polite"></div>
+              <h3>Calculatrice Web Interactive</h3>
+              <p>Application front-end en HTML5, CSS3 et JavaScript avec une expérience de calcul fluide et design moderne.</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <a href="https://github.com/khalidberrada2007-dotcom/Calculatrice-Web" target="_blank" rel="noopener" class="project-link">
+                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up" data-repo="khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" data-tags="php,mysql,crud">
+            <div class="project-card-header">
+              <div class="project-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="project-lang">
+                <i class="fab fa-php"></i>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="GestionDesCandidats.png" alt="Gestion des Candidats" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" target="_blank" rel="noopener" class="project-overlay-link">
+                  <i class="fab fa-github"></i> Voir le code
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="repo-stats" aria-live="polite"></div>
+              <h3>Gestion des Candidats</h3>
+              <p>Application CRUD complète en PHP/MySQL : ajout, affichage, modification et suppression de fiches candidats.</p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">CRUD</span>
+              </div>
+              <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" target="_blank" rel="noopener" class="project-link">
+                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- CONTACT -------- -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="contact-wrapper fade-up">
+          <div class="contact-info">
+            <div class="section-header">
+              <p class="eyebrow">// contact</p>
+              <h2>Discutons de votre <span class="gradient-text">prochain projet.</span></h2>
+              <div class="section-divider"></div>
+            </div>
+            <p class="contact-description">
+              Vous avez un projet en tête, une opportunité de stage, ou simplement envie d'échanger ?
+              Je suis à l'écoute. N'hésitez pas à me contacter via le formulaire ou directement par email.
+            </p>
+
+            <div class="contact-channels">
+              <a href="mailto:khalidberrada2007@gmail.com" class="contact-channel">
+                <span class="channel-icon"><i class="fas fa-envelope"></i></span>
+                <span class="channel-info">
+                  <span class="channel-label">Email</span>
+                  <span class="channel-value">khalidberrada2007@gmail.com</span>
+                </span>
+                <button type="button" class="channel-copy" data-copy="khalidberrada2007@gmail.com" aria-label="Copier l'email">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </a>
+              <a href="mailto:baradak087@gmail.com" class="contact-channel">
+                <span class="channel-icon"><i class="fas fa-envelope"></i></span>
+                <span class="channel-info">
+                  <span class="channel-label">Email secondaire</span>
+                  <span class="channel-value">baradak087@gmail.com</span>
+                </span>
+                <button type="button" class="channel-copy" data-copy="baradak087@gmail.com" aria-label="Copier l'email">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </a>
+              <a href="https://linkedin.com/in/khalid-barradah" target="_blank" rel="noopener" class="contact-channel">
+                <span class="channel-icon"><i class="fab fa-linkedin"></i></span>
+                <span class="channel-info">
+                  <span class="channel-label">LinkedIn</span>
+                  <span class="channel-value">@khalid-barradah</span>
+                </span>
+                <i class="fas fa-external-link-alt channel-external"></i>
+              </a>
+              <a href="https://github.com/khalidberrada2007-dotcom" target="_blank" rel="noopener" class="contact-channel">
+                <span class="channel-icon"><i class="fab fa-github"></i></span>
+                <span class="channel-info">
+                  <span class="channel-label">GitHub</span>
+                  <span class="channel-value">@khalidberrada2007-dotcom</span>
+                </span>
+                <i class="fas fa-external-link-alt channel-external"></i>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkgjbyqv" method="POST">
+            <div class="form-header">
+              <span class="form-dot"></span>
+              <span>Nouveau message</span>
+            </div>
+            <div class="form-body">
+              <div class="form-group">
+                <label for="formName">Nom complet</label>
+                <input type="text" id="formName" name="name" required placeholder="Votre nom" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="formEmail">Email</label>
+                <input type="email" id="formEmail" name="email" required placeholder="vous@exemple.com" autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="formSubject">Sujet</label>
+                <input type="text" id="formSubject" name="subject" placeholder="Sujet du message">
+              </div>
+              <div class="form-group">
+                <label for="formMessage">Message</label>
+                <textarea id="formMessage" name="message" required rows="5" placeholder="Votre message..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
+                <span class="submit-text">Envoyer le message</span>
+                <span class="submit-loading" hidden>
+                  <i class="fas fa-spinner fa-spin"></i> Envoi...
+                </span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-dot"></span>
+        khalid.barradah
+      </div>
+      <p class="footer-copy">
+        © <span id="year"></span> — Tous droits réservés. Construit avec <i class="fas fa-heart" style="color: var(--color-accent);"></i> et <i class="fas fa-coffee"></i>
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/khalidberrada2007-dotcom" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/khalid-barradah" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:khalidberrada2007@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== IMAGE MODAL ===== -->
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeImageModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Fermer" onclick="closeImageModal()">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-image-wrapper">
+        <img src="photo.png" alt="Khalid Barradah - Portrait" onerror="this.style.display='none'; this.parentElement.querySelector('.modal-fallback').style.display='flex';">
+        <div class="modal-fallback">Khalid Barradah</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COMMAND PALETTE ===== -->
+  <div class="cmdk-overlay" id="cmdkOverlay" role="dialog" aria-modal="true" aria-label="Palette de commandes" hidden>
+    <div class="cmdk-backdrop" onclick="closeCmdk()"></div>
+    <div class="cmdk-box">
+      <div class="cmdk-search">
+        <i class="fas fa-search"></i>
+        <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Tapez une commande ou une section…" autocomplete="off" spellcheck="false">
+        <div class="cmdk-search-hint">
+          <kbd>esc</kbd> fermer
+        </div>
+      </div>
+      <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>
+      <div class="cmdk-footer">
+        <span><kbd>↑</kbd><kbd>↓</kbd> Naviguer</span>
+        <span><kbd>↩</kbd> Ouvrir</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ===== SCRIPTS ===== -->
   <script src="script.js"></script>
 </body>
 </html>
+
