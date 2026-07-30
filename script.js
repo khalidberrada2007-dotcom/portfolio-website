@@ -680,8 +680,8 @@
   Terminal.prototype.intro = function () {
     var self = this;
     var lines = [
-      'Bienvenue sur mon portfolio ! \uD83C\uDF1F',
-      'Syst\u00e8me : d\u00e9veloppeur-web/pro',
+      'Bienvenue sur mon portfolio ! \uD83D\uDE80',
+      'Syst\u00e8me : \u00e9tudiant-encgj/pro',
       'Kernel : cr\u00e9ativit\u00e9 \uD83D\uDD25 + logique \u26A1',
       '',
       'Tapez "help" pour explorer.',
