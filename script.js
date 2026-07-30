@@ -1,6 +1,6 @@
 /* ==========================================================================
-   KHALID BARRADAH — PORTFOLIO PRO
-   Scripts v3.0 — Premium
+   KHALID BARRADAH � PORTFOLIO PRO
+   Scripts v3.0 � Premium
    ========================================================================== */
 
 (function () {
@@ -543,19 +543,19 @@
       help: function () {
         self.echo(
           'Commandes disponibles:\n' +
-          '  help       — Affiche cette aide\n' +
-          '  whoami     — Qui suis-je ?\n' +
-          '  skills     — Mes comp\u00e9tences\n' +
-          '  projects   — Mes projets\n' +
-          '  contact    — Me contacter\n' +
-          '  education  — Ma formation\n' +
-          '  experience — Mon exp\u00e9rience\n' +
-          '  cv         — T\u00e9l\u00e9charger mon CV\n' +
-          '  github     — Mon GitHub\n' +
-          '  linkedin   — Mon LinkedIn\n' +
-          '  email      — Mon email\n' +
-          '  date       — Affiche la date\n' +
-          '  clear      — Efface le terminal\n' +
+          '  help       � Affiche cette aide\n' +
+          '  whoami     � Qui suis-je ?\n' +
+          '  skills     � Mes comp\u00e9tences\n' +
+          '  projects   � Mes projets\n' +
+          '  contact    � Me contacter\n' +
+          '  education  � Ma formation\n' +
+          '  experience � Mon exp\u00e9rience\n' +
+          '  cv         � T\u00e9l\u00e9charger mon CV\n' +
+          '  github     � Mon GitHub\n' +
+          '  linkedin   � Mon LinkedIn\n' +
+          '  email      � Mon email\n' +
+          '  date       � Affiche la date\n' +
+          '  clear      � Efface le terminal\n' +
           '  sudo       ;-)',
           'out'
         );
@@ -563,7 +563,7 @@
       whoami: function () {
         self.echo(
           'Khalid Barradah\n' +
-          'D\u00e9veloppeur Web Junior | ISTA HH1\n' +
+          '\u00c9tudiant \u00e0 l\'ENCG El Jadida | Ancien \u00e9tudiant en D\u00e9veloppement Digital @ OFPPT\n' +
           'Passionn\u00e9 par le code, le design et l\'innovation.',
           'out'
         );
@@ -582,10 +582,10 @@
       projects: function () {
         self.echo(
           'Projets r\u00e9cents :\n' +
-          '  1. StageMaroc — PHP/MySQL (plateforme stages)\n' +
-          '  2. Gestion Stagiaires — Python (POO)\n' +
-          '  3. Calculatrice Web — HTML/CSS/JS\n' +
-          '  4. Gestion Candidats — PHP/MySQL (CRUD)\n' +
+          '  1. StageMaroc � PHP/MySQL (plateforme stages)\n' +
+          '  2. Gestion Stagiaires � Python (POO)\n' +
+          '  3. Calculatrice Web � HTML/CSS/JS\n' +
+          '  4. Gestion Candidats � PHP/MySQL (CRUD)\n' +
           '  Tapez "open 1-4" pour voir sur GitHub.',
           'out'
         );
@@ -602,8 +602,9 @@
       education: function () {
         self.echo(
           'Formation :\n' +
-          '  \u2022 ISTA HH1 — D\u00e9veloppement Digital (2025-2026)\n' +
-          '  \u2022 Bac Sciences Math\u00e9matiques B — 14.97/20 (Mention Bien)',
+          '  \u2022 ENCG El Jadida \u2014 1\u00e8re ann\u00e9e (2026 - Pr\u00e9sent)\n' +
+          '  \u2022 OFPPT - ISTA HH1 \u2014 D\u00e9veloppement Digital (2025 - 2026)\n' +
+          '  \u2022 Baccalaur\u00e9at Sciences Math\u00e9matiques B \u2014 Mention Bien (14,97/20)',
           'out'
         );
       },
@@ -1044,7 +1045,7 @@
       var subject = encodeURIComponent(self.form.querySelector('#formSubject').value || 'Contact Portfolio');
       var body = encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\n' + message);
       window.open('mailto:khalidberrada2007@gmail.com?subject=' + subject + '&body=' + body, '_blank');
-      self.showToast('Message envoy\u00e9 par email de secours. ✅', 'success');
+      self.showToast('Message envoy\u00e9 par email de secours. ?', 'success');
       self.form.reset();
     })
     .finally(function () {
