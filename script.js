@@ -1,10 +1,418 @@
 /* ==========================================================================
-   KHALID BARRADAH � PORTFOLIO PRO
-   Scripts v3.0 � Premium
+   KHALID BARRADAH — PORTFOLIO PRO
+   Scripts v3.0 — Premium (Bilingual FR/EN)
    ========================================================================== */
 
 (function () {
   'use strict';
+
+  // ========================================================================
+  // 1. I18N DICTIONARIES (Centralized translations)
+  //    French is the default language. English falls back to FR if a key is missing.
+  // ========================================================================
+
+var I18N = {
+    storageKey: 'portfolio-lang',
+    defaultLang: 'fr',
+    current: 'fr',
+    fr: {
+      'meta.title': 'Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer',
+      'meta.ogTitle': 'Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer',
+      'meta.twitterTitle': 'Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer',
+      'meta.description': 'Portfolio de Khalid Barradah — ENCGJ Student & Digital Development @OFPPT. Web Development • Digital & Business Enthusiast. À la recherche d\'un stage à El Jadida / Casablanca.',
+      'meta.ogDescription': 'Étudiant ENCGJ & Développement Digital @OFPPT — Web Development • Digital & Business Enthusiast. Recherche de stage.',
+
+      'lang.label': 'Changer la langue',
+      'lang.frLabel': 'Passer au français',
+      'lang.enLabel': 'Passer à l\'anglais',
+
+      'preloader.label': 'Chargement',
+      'preloader.line1': 'Initialisation du portfolio...',
+      'preloader.line2': 'Chargement des compétences...',
+      'preloader.line3': 'Prêt.',
+
+      // Nav
+      'nav.label': 'Navigation principale',
+      'nav.home': 'Accueil',
+      'nav.about': 'À propos',
+      'nav.skills': 'Compétences',
+      'nav.projects': 'Projets',
+      'nav.contact': 'Contact',
+      'nav.theme': 'Changer le thème',
+      'nav.palette': 'Ouvrir la palette de commandes',
+      'nav.menu': 'Menu mobile',
+      'nav.backToTop': 'Retour en haut',
+'nav.backToStart': 'Retour à l\'accueil',
+
+      // Hero
+      'hero.badge': 'Disponible pour un stage',
+      'hero.eyebrow': '// étudiant encgj & développement digital — el jadida, ma',
+      'hero.title1': 'Bonjour, je suis',
+      'hero.typingPrefix': 'Je suis ',
+      'hero.description': 'Étudiant à l\'<strong>ENCGJ</strong> & <strong>Développement Digital @OFPPT</strong> — Je transforme des idées en applications complètes, de la logique métier jusqu\'à l\'interface. Actuellement à la recherche d\'un stage pour mettre mes compétences techniques et ma vision <strong>digital & business</strong> au service d\'une équipe passionnante.',
+      'hero.ctaProjects': 'Voir mes projets',
+      'hero.ctaCv': 'Télécharger mon CV',
+      'hero.statProjects': 'Projets',
+      'hero.statTechs': 'Technos',
+      'hero.statMotivation': '% Motivation',
+      'hero.terminalLabel': 'Terminal interactif — tapez une commande',
+      'hero.terminalHint': 'Tapez',
+      'hero.terminalHint2': 'pour les commandes',
+      'hero.scroll': 'Scroll',
+
+      // About
+      'about.eyebrow': '// à propos',
+      'about.title1': 'Je transforme l\'apprentissage en',
+      'about.title2': 'réalisations concrètes.',
+      'about.text1': 'Étudiant en 1ère année à l\'<strong>ENCG El Jadida</strong> (École Nationale de Commerce et de Gestion) et en <strong>Développement Digital @OFPPT</strong>, avec une formation en développement web à l\'ISTA HH1 Casablanca comme background technique. Titulaire d\'un baccalauréat Sciences Mathématiques B (mention Bien). Je conçois des interfaces claires et des solutions robustes — du script Python à l\'application web complète.',
+      'about.text2': 'Ma vision : allier <strong>compétences techniques</strong> (dev web, Python, PHP, JavaScript) et <strong>vision business & management</strong> acquise à l\'ENCGJ pour créer des solutions numériques à fort impact. Mon expérience chez McDonald\'s m\'a appris la <strong>rigueur</strong>, le <strong>travail en équipe</strong> et la gestion sous pression — des soft skills que j\'applique aujourd\'hui dans chaque projet.',
+      'about.info.location': 'Localisation',
+      'about.info.locationVal': 'El Jadida / Casablanca, Maroc',
+      'about.info.education': 'Formation',
+      'about.info.educationVal': 'ENCGJ & OFPPT — Développement Digital',
+      'about.info.level': 'Niveau',
+      'about.info.levelVal': '1ère année ENCGJ & OFPPT (2025–2026)',
+      'about.info.bac': 'Bac',
+      'about.info.bacVal': 'Sciences Math B — 14,97/20',
+      'about.info.status': 'Statut',
+      'about.info.statusVal': 'Recherche de stage',
+      'about.status': 'Disponible',
+      'about.env.location': '"El Jadida/Casablanca, Maroc"',
+      'about.env.education': '"ENCGJ & OFPPT — Dev Digital"',
+      'about.env.status': '"Recherche de stage"',
+
+      // Skills
+      'skills.eyebrow': '// compétences',
+      'skills.title1': 'Des bases solides pour construire',
+      'skills.title2': 'de vrais projets.',
+      'skills.filterAll': 'Tous',
+      'skills.filterFrontend': 'Frontend',
+      'skills.filterBackend': 'Backend',
+      'skills.filterTools': 'Outils',
+      'skills.responsive': 'Responsive',
+      'skills.python': 'Python (POO)',
+      'skills.sql': 'MySQL / SQL',
+      'skills.git': 'Git & GitHub',
+      'skills.cyber': 'Cybersécurité',
+      'skills.level.advanced': 'Avancé',
+      'skills.level.intermediate': 'Intermédiaire',
+      'skills.level.intermediatePlus': 'Intermédiaire+',
+      'skills.level.beginner': 'Débutant',
+      'skills.level.basic': 'Initiation',
+
+      // Projects
+      'projects.eyebrow': '// projets',
+      'projects.title1': 'Quelques',
+      'projects.title2': 'réalisations récentes.',
+      'projects.viewCode': 'Voir le code',
+      'projects.viewGithub': 'Voir sur GitHub',
+      'projects.stageMaroc.alt': 'StageMaroc - Plateforme de stages',
+      'projects.stageMaroc.desc': 'Plateforme de mise en relation stagiaires-entreprises avec publication d\'offres et gestion des candidatures.',
+      'projects.gestionStagiaires.title': 'Gestion des Stagiaires OFPPT',
+      'projects.gestionStagiaires.alt': 'Gestion des Stagiaires OFPPT',
+      'projects.gestionStagiaires.desc': 'Application console Python orientée objet : gestion des stagiaires, suivi des absences, sauvegarde JSON et export CSV.',
+      'projects.calculatrice.title': 'Calculatrice Web Interactive',
+      'projects.calculatrice.alt': 'Calculatrice Web Interactive',
+      'projects.calculatrice.desc': 'Application front-end en HTML5, CSS3 et JavaScript avec une expérience de calcul fluide et design moderne.',
+      'projects.gestionCandidats.title': 'Gestion des Candidats',
+      'projects.gestionCandidats.alt': 'Gestion des Candidats',
+      'projects.gestionCandidats.desc': 'Application CRUD complète en PHP/MySQL : ajout, affichage, modification et suppression de fiches candidats.',
+
+      // Contact
+      'contact.eyebrow': '// contact',
+      'contact.title1': 'Discutons de votre',
+      'contact.title2': 'prochain projet.',
+      'contact.description': 'Vous avez un projet en tête, une opportunité de stage, ou simplement envie d\'échanger ? Je suis à l\'écoute. N\'hésitez pas à me contacter via le formulaire ou directement par email.',
+      'contact.email': 'Email',
+      'contact.emailSecondary': 'Email secondaire',
+      'contact.copyEmail': 'Copier l\'email',
+      'contact.formTitle': 'Nouveau message',
+      'contact.name': 'Nom complet',
+      'contact.namePlaceholder': 'Votre nom',
+      'contact.emailLabel': 'Email',
+      'contact.emailPlaceholder': 'vous@exemple.com',
+      'contact.subject': 'Sujet',
+      'contact.subjectPlaceholder': 'Sujet du message',
+      'contact.message': 'Message',
+      'contact.messagePlaceholder': 'Votre message...',
+      'contact.submit': 'Envoyer le message',
+      'contact.sending': 'Envoi...',
+
+      // Footer
+      'footer.rights': 'Tous droits réservés.',
+      'footer.build': 'Construit avec',
+      'footer.and': 'et',
+
+      // Modal
+      'modal.close': 'Fermer',
+      'modal.alt': 'Khalid Barradah - Portrait',
+
+      // Palette
+      'palette.label': 'Palette de commandes',
+      'palette.placeholder': 'Tapez une commande ou une section…',
+      'palette.close': 'fermer',
+      'palette.navigate': 'Naviguer',
+      'palette.open': 'Ouvrir',
+      'palette.empty': 'Aucun résultat trouvé',
+
+      // Dynamic (typing, terminal, palette items, toasts)
+      'typing.0': 'des applications web complètes.',
+      'typing.1': 'des expériences utilisateur modernes.',
+      'typing.2': 'des solutions backend robustes.',
+      'typing.3': 'des interfaces élégantes et réactives.',
+      'typing.4': 'l\'avenir du web, une ligne à la fois.',
+
+      'term.help': 'Commandes disponibles:\n  help       — Affiche cette aide\n  whoami     — Qui suis-je ?\n  skills     — Mes compétences\n  projects   — Mes projets\n  contact    — Me contacter\n  education  — Ma formation\n  experience — Mon expérience\n  cv         — Télécharger mon CV\n  github     — Mon GitHub\n  linkedin   — Mon LinkedIn\n  email      — Mon email\n  date       — Affiche la date\n  clear      — Efface le terminal\n  sudo       ;-)',
+      'term.whoami': 'Khalid Barradah\nÉtudiant à l\'ENCG El Jadida | Ancien étudiant en Développement Digital @ OFPPT\nPassionné par le code, le design et l\'innovation.',
+      'term.skills': 'Compétences techniques :\n  • Frontend : HTML5, CSS3, JavaScript (ES6+),\n    Responsive Design\n  • Backend  : Python (POO), PHP, MySQL/SQL\n  • Outils   : Git & GitHub, VirtualBox\n  • Sécurité : Initiation cybersécurité',
+      'term.projects': 'Projets récents :\n  1. StageMaroc — PHP/MySQL (plateforme stages)\n  2. Gestion Stagiaires — Python (POO)\n  3. Calculatrice Web — HTML/CSS/JS\n  4. Gestion Candidats — PHP/MySQL (CRUD)\n  Tapez "open 1-4" pour voir sur GitHub.',
+      'term.contact': 'Me contacter :\n  Email : khalidberrada2007@gmail.com\n  LinkedIn : @khalid-barradah\n  GitHub : @khalidberrada2007-dotcom',
+      'term.education': 'Formation :\n  • ENCG El Jadida — 1ère année (2026 - Présent)\n  • OFPPT - ISTA HH1 — Développement Digital (2025 - 2026)\n  • Baccalauréat Sciences Mathématiques B — Mention Bien (14,97/20)',
+      'term.experience': 'Expérience :\n  • Équipier McDonald\'s (soft skills : rigueur, travail d\'équipe, gestion stress)\n  • Projets personnels (voir "projects")',
+      'term.cv': 'Téléchargement du CV en cours...',
+      'term.github': 'Ouverture de GitHub...',
+      'term.linkedin': 'Ouverture de LinkedIn...',
+      'term.email': 'Ouverture du client email...',
+      'term.sudo': '😏 Vous avez les droits root. Mais il n\'y a rien à casser ici.',
+      'term.openOk': 'Ouverture du projet ',
+      'term.openErr': 'introuvable. Utilisez "projects" pour voir la liste.',
+      'term.intro0': 'Bienvenue sur mon portfolio ! 🚀',
+      'term.intro1': 'Système : étudiant-encgj/pro',
+      'term.intro2': 'Kernel : créativité 🔥 + logique ⚡',
+      'term.introHelp': 'Tapez "help" pour explorer.',
+      'term.paletteHint': 'Ou cliquez sur ⌘K pour la palette.',
+      'term.unknown': 'Commande inconnue : "',
+      'term.unknown2': '". Tapez "help" pour la liste.',
+
+      'paletteItem.home': 'Accueil',
+      'paletteItem.about': 'À propos',
+      'paletteItem.skills': 'Compétences',
+      'paletteItem.projects': 'Projets',
+      'paletteItem.contact': 'Contact',
+      'paletteItem.theme': 'Changer le thème',
+      'paletteItem.cv': 'Télécharger CV',
+      'paletteItem.copyEmail': 'Copier l\'email',
+      'paletteItem.github': 'Ouvrir GitHub',
+      'paletteItem.linkedin': 'Ouvrir LinkedIn',
+
+      'toast.copied': 'Copié dans le presse-papier !',
+      'toast.copyError': 'Impossible de copier.',
+      'toast.emailCopied': 'Email copié !',
+      'toast.required': 'Veuillez remplir tous les champs obligatoires.',
+      'toast.invalidEmail': 'Veuillez entrer un email valide.',
+      'toast.fallback': 'Message envoyé par email de secours.',
+      'toast.success': 'Merci ',
+      'toast.success2': ' ! Votre message a bien été envoyé. Je vous répondrai rapidement. ✨'
+    },
+
+    en: {
+      'meta.title': 'Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer',
+      'meta.description': 'Portfolio of Khalid Barradah — ENCGJ Student & Digital Development @OFPPT. Web Development • Digital & Business Enthusiast. Looking for an internship in El Jadida / Casablanca.',
+      'meta.ogTitle': 'Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer',
+      'meta.ogDescription': 'ENCGJ Student & Digital Development @OFPPT — Web Development • Digital & Business Enthusiast. Looking for an internship.',
+      'meta.twitterTitle': 'Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer',
+
+      'preloader.label': 'Loading',
+      'preloader.line1': 'Initializing portfolio...',
+      'preloader.line2': 'Loading skills...',
+      'preloader.line3': 'Ready.',
+
+      'nav.label': 'Main navigation',
+      'nav.home': 'Home',
+      'nav.about': 'About',
+      'nav.skills': 'Skills',
+      'nav.projects': 'Projects',
+      'nav.contact': 'Contact',
+      'nav.theme': 'Toggle theme',
+      'nav.palette': 'Open command palette',
+      'nav.menu': 'Mobile menu',
+      'nav.backToTop': 'Back to top',
+      'nav.backToStart': 'Back to home',
+
+      'lang.label': 'Change language',
+      'lang.frLabel': 'Switch to French',
+      'lang.enLabel': 'Switch to English',
+
+      'hero.badge': 'Available for an internship',
+      'hero.eyebrow': '// encgj student & digital development — el jadida, ma',
+      'hero.title1': 'Hello, I am',
+      'hero.typingPrefix': 'I am ',
+      'hero.description': 'Student at <strong>ENCGJ</strong> & <strong>Digital Development @OFPPT</strong> — I turn ideas into complete applications, from business logic to the interface. Currently looking for an internship to put my technical skills and my <strong>digital & business</strong> vision at the service of an exciting team.',
+      'hero.ctaProjects': 'View my projects',
+      'hero.ctaCv': 'Download my CV',
+      'hero.statProjects': 'Projects',
+      'hero.statTechs': 'Techs',
+      'hero.statMotivation': '% Motivation',
+      'hero.terminalLabel': 'Interactive terminal — type a command',
+      'hero.terminalHint': 'Type',
+      'hero.terminalHint2': 'for commands',
+      'hero.scroll': 'Scroll',
+
+      'about.eyebrow': '// about',
+      'about.title1': 'I turn learning into',
+      'about.title2': 'concrete achievements.',
+      'about.text1': 'First-year student at <strong>ENCG El Jadida</strong> (National School of Commerce and Management) and in <strong>Digital Development @OFPPT</strong>, with web development training at ISTA HH1 Casablanca as a technical background. I hold a Baccalaureate in Mathematical Sciences B (with honors). I design clear interfaces and robust solutions — from Python scripts to full web applications.',
+      'about.text2': 'My vision: combine <strong>technical skills</strong> (web dev, Python, PHP, JavaScript) and a <strong>business & management mindset</strong> learned at ENCGJ to create high-impact digital solutions. My experience at McDonald\'s taught me <strong>rigor</strong>, <strong>teamwork</strong> and working under pressure — soft skills I apply today in every project.',
+      'about.info.location': 'Location',
+      'about.info.locationVal': 'El Jadida / Casablanca, Morocco',
+      'about.info.education': 'Education',
+      'about.info.educationVal': 'ENCGJ & OFPPT — Digital Development',
+      'about.info.level': 'Level',
+      'about.info.levelVal': '1st year ENCGJ & OFPPT (2025–2026)',
+      'about.info.bac': 'Bac',
+      'about.info.bacVal': 'Math Sciences B — 14.97/20',
+      'about.info.status': 'Status',
+      'about.info.statusVal': 'Looking for an internship',
+      'about.status': 'Available',
+      'about.env.location': '"El Jadida/Casablanca, Morocco"',
+      'about.env.education': '"ENCGJ & OFPPT — Dev Digital"',
+      'about.env.status': '"Looking for an internship"',
+
+      'skills.eyebrow': '// skills',
+      'skills.title1': 'Solid foundations to build',
+      'skills.title2': 'real projects.',
+      'skills.filterAll': 'All',
+      'skills.filterFrontend': 'Frontend',
+      'skills.filterBackend': 'Backend',
+      'skills.filterTools': 'Tools',
+      'skills.responsive': 'Responsive',
+      'skills.python': 'Python (OOP)',
+      'skills.sql': 'MySQL / SQL',
+      'skills.git': 'Git & GitHub',
+      'skills.cyber': 'Cybersecurity',
+      'skills.level.advanced': 'Advanced',
+      'skills.level.intermediate': 'Intermediate',
+      'skills.level.intermediatePlus': 'Intermediate+',
+      'skills.level.beginner': 'Beginner',
+      'skills.level.basic': 'Basics',
+
+      'projects.eyebrow': '// projects',
+      'projects.title1': 'Some',
+      'projects.title2': 'recent achievements.',
+      'projects.viewCode': 'View code',
+      'projects.viewGithub': 'View on GitHub',
+      'projects.stageMaroc.alt': 'StageMaroc - Internship platform',
+      'projects.stageMaroc.desc': 'Platform connecting interns and companies with job posting and application management.',
+      'projects.gestionStagiaires.title': 'OFPPT Intern Management',
+      'projects.gestionStagiaires.alt': 'OFPPT Intern Management',
+      'projects.gestionStagiaires.desc': 'Object-oriented Python console application: intern management, absence tracking, JSON save and CSV export.',
+      'projects.calculatrice.title': 'Interactive Web Calculator',
+      'projects.calculatrice.alt': 'Interactive Web Calculator',
+      'projects.calculatrice.desc': 'Front-end application in HTML5, CSS3 and JavaScript with a smooth calculation experience and modern design.',
+      'projects.gestionCandidats.title': 'Candidate Management',
+      'projects.gestionCandidats.alt': 'Candidate Management',
+      'projects.gestionCandidats.desc': 'Complete CRUD application in PHP/MySQL: add, display, edit and delete candidate records.',
+
+      'contact.eyebrow': '// contact',
+      'contact.title1': 'Let\'s discuss your',
+      'contact.title2': 'next project.',
+      'contact.description': 'Do you have a project in mind, an internship opportunity, or just want to chat? I\'m all ears. Feel free to contact me via the form or directly by email.',
+      'contact.email': 'Email',
+      'contact.emailSecondary': 'Secondary email',
+      'contact.copyEmail': 'Copy email',
+      'contact.formTitle': 'New message',
+      'contact.name': 'Full name',
+      'contact.namePlaceholder': 'Your name',
+      'contact.emailLabel': 'Email',
+      'contact.emailPlaceholder': 'you@example.com',
+      'contact.subject': 'Subject',
+      'contact.subjectPlaceholder': 'Message subject',
+      'contact.message': 'Message',
+      'contact.messagePlaceholder': 'Your message...',
+      'contact.submit': 'Send message',
+      'contact.sending': 'Sending...',
+
+      'footer.rights': 'All rights reserved.',
+      'footer.build': 'Built with',
+      'footer.and': 'and',
+
+      'modal.close': 'Close',
+      'modal.alt': 'Khalid Barradah - Portrait',
+
+      'palette.label': 'Command palette',
+      'palette.placeholder': 'Type a command or a section…',
+      'palette.close': 'close',
+      'palette.navigate': 'Navigate',
+      'palette.open': 'Open',
+      'palette.empty': 'No result found',
+
+      'typing.0': 'complete web applications.',
+      'typing.1': 'modern user experiences.',
+      'typing.2': 'robust backend solutions.',
+      'typing.3': 'elegant and responsive interfaces.',
+      'typing.4': 'the future of the web, one line at a time.',
+
+      'term.help': 'Available commands:\n  help       — Shows this help\n  whoami     — Who am I?\n  skills     — My skills\n  projects   — My projects\n  contact    — Contact me\n  education  — My education\n  experience — My experience\n  cv         — Download my CV\n  github     — My GitHub\n  linkedin   — My LinkedIn\n  email      — My email\n  date       — Shows the date\n  clear      — Clears the terminal\n  sudo       ;-)',
+      'term.whoami': 'Khalid Barradah\nStudent at ENCG El Jadida | Former student in Digital Development @ OFPPT\nPassionate about code, design and innovation.',
+      'term.skills': 'Technical skills:\n  • Frontend: HTML5, CSS3, JavaScript (ES6+),\n    Responsive Design\n  • Backend : Python (OOP), PHP, MySQL/SQL\n  • Tools   : Git & GitHub, VirtualBox\n  • Security: Cybersecurity basics',
+      'term.projects': 'Recent projects:\n  1. StageMaroc — PHP/MySQL (internship platform)\n  2. Intern Management — Python (OOP)\n  3. Web Calculator — HTML/CSS/JS\n  4. Candidate Management — PHP/MySQL (CRUD)\n  Type "open 1-4" to view on GitHub.',
+      'term.contact': 'Contact me:\n  Email: khalidberrada2007@gmail.com\n  LinkedIn: @khalid-barradah\n  GitHub: @khalidberrada2007-dotcom',
+      'term.education': 'Education:\n  • ENCG El Jadida — 1st year (2026 - Present)\n  • OFPPT - ISTA HH1 — Digital Development (2025 - 2026)\n  • Baccalaureate Mathematical Sciences B — With honors (14.97/20)',
+      'term.experience': 'Experience:\n  • McDonald\'s Crew Member (soft skills: rigor, teamwork, stress management)\n  • Personal projects (see "projects")',
+      'term.cv': 'Downloading CV...',
+      'term.github': 'Opening GitHub...',
+      'term.linkedin': 'Opening LinkedIn...',
+      'term.email': 'Opening email client...',
+      'term.sudo': '😏 You have root access. But there\'s nothing to break here.',
+      'term.openOk': 'Opening project ',
+      'term.openErr': 'not found. Use "projects" to see the list.',
+      'term.intro0': 'Welcome to my portfolio! 🚀',
+      'term.intro1': 'System: student-encgj/pro',
+      'term.intro2': 'Kernel: creativity 🔥 + logic ⚡',
+      'term.introHelp': 'Type "help" to explore.',
+      'term.paletteHint': 'Or click ⌘K for the palette.',
+      'term.unknown': 'Unknown command: "',
+      'term.unknown2': '". Type "help" for the list.',
+
+      'paletteItem.home': 'Home',
+      'paletteItem.about': 'About',
+      'paletteItem.skills': 'Skills',
+      'paletteItem.projects': 'Projects',
+      'paletteItem.contact': 'Contact',
+      'paletteItem.theme': 'Toggle theme',
+      'paletteItem.cv': 'Download CV',
+      'paletteItem.copyEmail': 'Copy email',
+      'paletteItem.github': 'Open GitHub',
+      'paletteItem.linkedin': 'Open LinkedIn',
+
+      'toast.copied': 'Copied to clipboard!',
+      'toast.copyError': 'Unable to copy.',
+      'toast.emailCopied': 'Email copied!',
+      'toast.required': 'Please fill in all required fields.',
+      'toast.invalidEmail': 'Please enter a valid email.',
+      'toast.fallback': 'Message sent via fallback email.',
+      'toast.success': 'Thank you ',
+      'toast.success2': '! Your message has been sent. I will get back to you soon. ✨'
+    },
+
+    // Resolve a key with fallback to French
+    t: function (key) {
+      var dict = this[this.current] || this[this.defaultLang];
+      var val = dict[key];
+      if (val === undefined || val === null || val === '') {
+        val = this[this.defaultLang][key];
+      }
+      if (val === undefined || val === null) return '';
+      return val;
+    },
+
+    // Get current language
+    getLang: function () {
+      return this.current;
+    },
+
+    // Get a list of typing words for current lang
+    typingWords: function () {
+      var words = [];
+      for (var i = 0; i < 5; i++) {
+        words.push(this.t('typing.' + i));
+      }
+      return words;
+    }
+  };
+
+  // Expose global translation helper
+  window.i18n = I18N;
 
   // ========================================================================
   // 1. UTILITIES
@@ -71,6 +479,7 @@
     menuToggle: $('#menuToggle'),
     themeToggle: $('#themeToggle'),
     themeIcon: $('#themeIcon'),
+    langBtns: $$('.lang-btn'),
     scrollProgress: $('#scrollProgress'),
     backToTop: $('#backToTop'),
     typingText: $('#typingText'),
@@ -102,6 +511,112 @@
   // Populate filter btns
   DOM.filterBtns = $$('.filter-btn');
   DOM.channelCopies = $$('.channel-copy');
+
+  // ========================================================================
+  // 2.5 I18N MODULE
+  // ========================================================================
+  function I18n() {
+    this.lang = null;
+  }
+
+  I18n.prototype.init = function () {
+    var self = this;
+    // Read saved language (default 'fr')
+    var saved = ls.get(I18N.storageKey, I18N.defaultLang);
+    if (saved !== 'fr' && saved !== 'en') saved = I18N.defaultLang;
+    this.lang = saved;
+    I18N.current = saved;
+
+    // Wire language buttons
+    DOM.langBtns.forEach(function (btn) {
+      on(btn, 'click', function () {
+        self.setLang(btn.dataset.lang);
+      });
+    });
+
+    // Apply initial language
+    this.apply();
+  };
+
+  I18n.prototype.setLang = function (lang) {
+    if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+    if (lang === this.lang) {
+      this.apply(); // still refresh
+      return;
+    }
+    this.lang = lang;
+    I18N.current = lang;
+    ls.set(I18N.storageKey, lang);
+    this.apply();
+    // Refresh dynamic content
+    this.refreshDynamic();
+  };
+
+  I18n.prototype.apply = function () {
+    // 1. Set document lang
+    DOM.html.setAttribute('lang', this.lang);
+
+    // 2. Update active button states
+    DOM.langBtns.forEach(function (btn) {
+      var active = btn.dataset.lang === (window.i18n.current);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      if (active) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+
+    // 3. Update all [data-i18n] text nodes
+    $$('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = window.i18n.t(key);
+      } else {
+        el.textContent = window.i18n.t(key);
+      }
+      // If element has data-text (preloader), update it too
+      if (el.hasAttribute('data-text')) {
+        el.setAttribute('data-text', window.i18n.t(key));
+      }
+    });
+
+    // 4. Update all [data-i18n-attr] attributes
+    $$('[data-i18n-attr]').forEach(function (el) {
+      var spec = el.getAttribute('data-i18n-attr');
+      // Spec format: "attr:key" or "attr:key,attr2:key2"
+      spec.split(',').forEach(function (pair) {
+        var parts = pair.split(':');
+        if (parts.length < 2) return;
+        var attr = parts[0].trim();
+        var key = parts.slice(1).join(':').trim();
+        el.setAttribute(attr, window.i18n.t(key));
+      });
+    });
+
+    // 5. Update meta tags
+    var title = $('#pageTitle');
+    if (title) title.textContent = window.i18n.t('meta.title');
+    var metaDesc = $('#metaDescription');
+    if (metaDesc) {
+      var d = window.i18n.t('meta.description');
+      if (d) metaDesc.setAttribute('content', d);
+    }
+    var ogTitle = $('#ogTitle');
+    if (ogTitle) ogTitle.setAttribute('content', window.i18n.t('meta.ogTitle'));
+    var ogDesc = $('#ogDescription');
+    if (ogDesc) ogDesc.setAttribute('content', window.i18n.t('meta.ogDescription'));
+    var twTitle = $('#twitterTitle');
+    if (twTitle) twTitle.setAttribute('content', window.i18n.t('meta.twitterTitle'));
+  };
+
+I18n.prototype.refreshDynamic = function () {
+    // Refresh typing words
+    if (window.typing) window.typing.words = window.i18n.typingWords();
+    // Refresh terminal commands
+    if (window.terminal) window.terminal.commands = window.terminal.buildCommands();
+    // Reprint terminal intro in the new language (no manual refresh needed)
+    if (window.terminal && window.terminal.reprintIntro) window.terminal.reprintIntro();
+    // Refresh palette items
+    if (window.cmdk) window.cmdk.items = window.cmdk.buildItems();
+  };
 
   // ========================================================================
   // 3. PRELOADER
@@ -294,13 +809,7 @@
 
   function TypingEffect() {
     this.el = DOM.typingText;
-    this.words = [
-      'des applications web compl\u00e8tes.',
-      'des exp\u00e9riences utilisateur modernes.',
-      'des solutions backend robustes.',
-      'des interfaces \u00e9l\u00e9gantes et r\u00e9actives.',
-      'l\'avenir du web, une ligne \u00e0 la fois.'
-    ];
+    this.words = window.i18n.typingWords();
     this.wordIndex = 0;
     this.charIndex = 0;
     this.isDeleting = false;
@@ -310,11 +819,12 @@
     var self = this;
     if (!self.el) return;
     setTimeout(function () { self.type(); }, 1800);
+    window.typing = this; // expose for language switch
   };
 
   TypingEffect.prototype.type = function () {
     var self = this;
-    var current = self.words[self.wordIndex];
+    var current = self.words[self.wordIndex] || '';
 
     if (self.isDeleting) {
       self.charIndex--;
@@ -394,6 +904,7 @@
 
   Particles.prototype.animate = function () {
     var self = this;
+    if (!self.canvas || !self.ctx) return;
     self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
     self.particles.forEach(function (p, i) {
       p.x += p.speedX;
@@ -539,110 +1050,57 @@
 
   Terminal.prototype.buildCommands = function () {
     var self = this;
+    var t = window.i18n.t.bind(window.i18n);
     return {
       help: function () {
-        self.echo(
-          'Commandes disponibles:\n' +
-          '  help       � Affiche cette aide\n' +
-          '  whoami     � Qui suis-je ?\n' +
-          '  skills     � Mes comp\u00e9tences\n' +
-          '  projects   � Mes projets\n' +
-          '  contact    � Me contacter\n' +
-          '  education  � Ma formation\n' +
-          '  experience � Mon exp\u00e9rience\n' +
-          '  cv         � T\u00e9l\u00e9charger mon CV\n' +
-          '  github     � Mon GitHub\n' +
-          '  linkedin   � Mon LinkedIn\n' +
-          '  email      � Mon email\n' +
-          '  date       � Affiche la date\n' +
-          '  clear      � Efface le terminal\n' +
-          '  sudo       ;-)',
-          'out'
-        );
+        self.echo(t('term.help'), 'out');
       },
       whoami: function () {
-        self.echo(
-          'Khalid Barradah\n' +
-          '\u00c9tudiant \u00e0 l\'ENCG El Jadida | Ancien \u00e9tudiant en D\u00e9veloppement Digital @ OFPPT\n' +
-          'Passionn\u00e9 par le code, le design et l\'innovation.',
-          'out'
-        );
+        self.echo(t('term.whoami'), 'out');
       },
       skills: function () {
-        self.echo(
-          'Comp\u00e9tences techniques :\n' +
-          '  \u2022 Frontend : HTML5, CSS3, JavaScript (ES6+),\n' +
-          '    Responsive Design\n' +
-          '  \u2022 Backend  : Python (POO), PHP, MySQL/SQL\n' +
-          '  \u2022 Outils   : Git & GitHub, VirtualBox\n' +
-          '  \u2022 S\u00e9curit\u00e9 : Initiation cybers\u00e9curit\u00e9',
-          'out'
-        );
+        self.echo(t('term.skills'), 'out');
       },
       projects: function () {
-        self.echo(
-          'Projets r\u00e9cents :\n' +
-          '  1. StageMaroc � PHP/MySQL (plateforme stages)\n' +
-          '  2. Gestion Stagiaires � Python (POO)\n' +
-          '  3. Calculatrice Web � HTML/CSS/JS\n' +
-          '  4. Gestion Candidats � PHP/MySQL (CRUD)\n' +
-          '  Tapez "open 1-4" pour voir sur GitHub.',
-          'out'
-        );
+        self.echo(t('term.projects'), 'out');
       },
       contact: function () {
-        self.echo(
-          'Me contacter :\n' +
-          '  Email : khalidberrada2007@gmail.com\n' +
-          '  LinkedIn : @khalid-barradah\n' +
-          '  GitHub : @khalidberrada2007-dotcom',
-          'out'
-        );
+        self.echo(t('term.contact'), 'out');
       },
       education: function () {
-        self.echo(
-          'Formation :\n' +
-          '  \u2022 ENCG El Jadida \u2014 1\u00e8re ann\u00e9e (2026 - Pr\u00e9sent)\n' +
-          '  \u2022 OFPPT - ISTA HH1 \u2014 D\u00e9veloppement Digital (2025 - 2026)\n' +
-          '  \u2022 Baccalaur\u00e9at Sciences Math\u00e9matiques B \u2014 Mention Bien (14,97/20)',
-          'out'
-        );
+        self.echo(t('term.education'), 'out');
       },
       experience: function () {
-        self.echo(
-          "Exp\u00e9rience :\n" +
-          "  \u2022 \u00c9quipier McDonald's (soft skills : rigueur, travail d'\u00e9quipe, gestion stress)\n" +
-          '  \u2022 Projets personnels (voir "projects")',
-          'out'
-        );
+        self.echo(t('term.experience'), 'out');
       },
       cv: function () {
         var a = document.createElement('a');
         a.href = 'KHALID_BARRADAH_CV.pdf';
         a.download = 'KHALID_BARRADAH_CV.pdf';
         a.click();
-        self.echo('T\u00e9l\u00e9chargement du CV en cours...', 'out');
+        self.echo(t('term.cv'), 'out');
       },
       github: function () {
         window.open('https://github.com/khalidberrada2007-dotcom', '_blank');
-        self.echo('Ouverture de GitHub...', 'out');
+        self.echo(t('term.github'), 'out');
       },
       linkedin: function () {
         window.open('https://linkedin.com/in/khalid-barradah', '_blank');
-        self.echo('Ouverture de LinkedIn...', 'out');
+        self.echo(t('term.linkedin'), 'out');
       },
       email: function () {
         window.location.href = 'mailto:khalidberrada2007@gmail.com';
-        self.echo('Ouverture du client email...', 'out');
+        self.echo(t('term.email'), 'out');
       },
       date: function () {
-        self.echo(new Date().toLocaleString('fr-FR'), 'out');
+        var locale = (window.i18n.current === 'en') ? 'en-US' : 'fr-FR';
+        self.echo(new Date().toLocaleString(locale), 'out');
       },
       clear: function () {
         self.output.innerHTML = '';
       },
       sudo: function () {
-        self.echo('\uD83D\uDE0F Vous avez les droits root. Mais il n\'y a rien \u00e0 casser ici.', 'out');
+        self.echo(t('term.sudo'), 'out');
       },
       open: function (args) {
         var urls = {
@@ -654,10 +1112,10 @@
         var url = urls[args[0]];
         if (url) {
           window.open(url, '_blank');
-          self.echo('Ouverture du projet ' + args[0] + '...', 'out');
+          self.echo(t('term.openOk') + args[0] + '...', 'out');
           return;
         }
-        self.echo('Projet "' + args[0] + '" introuvable. Utilisez "projects" pour voir la liste.', 'err');
+        self.echo('"' + args[0] + '" ' + t('term.openErr'), 'err');
       }
     };
   };
@@ -675,23 +1133,39 @@
       if (e.key === 'ArrowDown') { e.preventDefault(); self.navigateHistory(1); }
     });
     on(self.body, 'click', function () { self.input.focus(); });
+    window.terminal = this; // expose for language switch
   };
 
-  Terminal.prototype.intro = function () {
+Terminal.prototype.intro = function () {
     var self = this;
+    // Clear any pending intro timers to avoid stacking on re-print
+    if (self._introTimers) {
+      self._introTimers.forEach(function (t) { clearTimeout(t); });
+    }
+    self._introTimers = [];
+    var t = window.i18n.t.bind(window.i18n);
     var lines = [
-      'Bienvenue sur mon portfolio ! \uD83D\uDE80',
-      'Syst\u00e8me : \u00e9tudiant-encgj/pro',
-      'Kernel : cr\u00e9ativit\u00e9 \uD83D\uDD25 + logique \u26A1',
+      t('term.intro0'),
+      t('term.intro1'),
+      t('term.intro2'),
       '',
-      'Tapez "help" pour explorer.',
-      'Ou cliquez sur \u2318K pour la palette.'
+      t('term.introHelp'),
+      t('term.paletteHint')
     ];
     lines.forEach(function (line, i) {
-      setTimeout(function () {
+      var timer = setTimeout(function () {
         self.echo(line, i < 4 ? 'out' : 'acc');
       }, 300 + i * 350);
+      self._introTimers.push(timer);
     });
+  };
+
+  // Reprint the intro in the currently selected language (called on language switch)
+  Terminal.prototype.reprintIntro = function () {
+    var self = this;
+    if (!self.output) return;
+    self.output.innerHTML = '';
+    self.intro();
   };
 
   Terminal.prototype.execute = function () {
@@ -709,7 +1183,8 @@
     if (this.commands[cmd]) {
       this.commands[cmd](args);
     } else {
-      this.echo('Commande inconnue : "' + cmd + '". Tapez "help" pour la liste.', 'err');
+      var t = window.i18n.t.bind(window.i18n);
+      this.echo(t('term.unknown') + cmd + t('term.unknown2'), 'err');
     }
 
     this.input.value = '';
@@ -746,42 +1221,49 @@
     this.activeIndex = 0;
   }
 
-  CommandPalette.prototype.init = function () {
+  CommandPalette.prototype.buildItems = function () {
     var self = this;
-    if (!self.overlay) return;
-
-    self.items = [
-      { label: 'Accueil', icon: 'fas fa-home', action: function () { self.navigate('#home'); } },
-      { label: '\u00c0 propos', icon: 'fas fa-user', action: function () { self.navigate('#about'); } },
-      { label: 'Comp\u00e9tences', icon: 'fas fa-code', action: function () { self.navigate('#skills'); } },
-      { label: 'Projets', icon: 'fas fa-folder', action: function () { self.navigate('#projects'); } },
-      { label: 'Contact', icon: 'fas fa-envelope', action: function () { self.navigate('#contact'); } },
+    var t = window.i18n.t.bind(window.i18n);
+    return [
+      { label: t('paletteItem.home'), icon: 'fas fa-home', action: function () { self.navigate('#home'); } },
+      { label: t('paletteItem.about'), icon: 'fas fa-user', action: function () { self.navigate('#about'); } },
+      { label: t('paletteItem.skills'), icon: 'fas fa-code', action: function () { self.navigate('#skills'); } },
+      { label: t('paletteItem.projects'), icon: 'fas fa-folder', action: function () { self.navigate('#projects'); } },
+      { label: t('paletteItem.contact'), icon: 'fas fa-envelope', action: function () { self.navigate('#contact'); } },
       {
-        label: 'Changer le th\u00e8me',
+        label: t('paletteItem.theme'),
         icon: 'fas fa-palette',
         action: function () { if (window.theme) window.theme.toggle(); self.toggle(); }
       },
       {
-        label: 'T\u00e9l\u00e9charger CV',
+        label: t('paletteItem.cv'),
         icon: 'fas fa-download',
         action: function () { var a = document.createElement('a'); a.href = 'KHALID_BARRADAH_CV.pdf'; a.download = ''; a.click(); self.toggle(); }
       },
       {
-        label: "Copier l'email",
+        label: t('paletteItem.copyEmail'),
         icon: 'fas fa-copy',
-        action: function () { navigator.clipboard.writeText('khalidberrada2007@gmail.com'); self.showToast('Email copi\u00e9 !'); self.toggle(); }
+        action: function () { navigator.clipboard.writeText('khalidberrada2007@gmail.com'); self.showToast(t('toast.emailCopied')); self.toggle(); }
       },
       {
-        label: 'Ouvrir GitHub',
+        label: t('paletteItem.github'),
         icon: 'fab fa-github',
         action: function () { window.open('https://github.com/khalidberrada2007-dotcom', '_blank'); self.toggle(); }
       },
       {
-        label: 'Ouvrir LinkedIn',
+        label: t('paletteItem.linkedin'),
         icon: 'fab fa-linkedin',
         action: function () { window.open('https://linkedin.com/in/khalid-barradah', '_blank'); self.toggle(); }
       }
     ];
+  };
+
+  CommandPalette.prototype.init = function () {
+    var self = this;
+    if (!self.overlay) return;
+
+    self.items = this.buildItems();
+    window.cmdk = this;
 
     on(self.trigger, 'click', function () { self.open(); });
 
@@ -841,7 +1323,8 @@
     this.activeIndex = clamp(this.activeIndex, 0, filtered.length - 1);
 
     if (!filtered.length) {
-      this.list.innerHTML = '<div class="cmdk-empty">Aucun r\u00e9sultat trouv\u00e9</div>';
+      var t = window.i18n.t.bind(window.i18n);
+      this.list.innerHTML = '<div class="cmdk-empty">' + t('palette.empty') + '</div>';
       return;
     }
 
@@ -1008,17 +1491,18 @@
   ContactForm.prototype.handleSubmit = function (e) {
     e.preventDefault();
     var self = this;
+    var t = window.i18n.t.bind(window.i18n);
 
     var name = self.form.querySelector('#formName').value.trim();
     var email = self.form.querySelector('#formEmail').value.trim();
     var message = self.form.querySelector('#formMessage').value.trim();
 
     if (!name || !email || !message) {
-      self.showToast('Veuillez remplir tous les champs obligatoires.', 'error');
+      self.showToast(t('toast.required'), 'error');
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      self.showToast('Veuillez entrer un email valide.', 'error');
+      self.showToast(t('toast.invalidEmail'), 'error');
       return;
     }
 
@@ -1034,7 +1518,7 @@
     })
     .then(function (resp) {
       if (resp.ok) return resp.json();
-      throw new Error('Erreur serveur');
+      throw new Error('Server error');
     })
     .then(function () {
       self.showSuccessModal(name);
@@ -1045,7 +1529,7 @@
       var subject = encodeURIComponent(self.form.querySelector('#formSubject').value || 'Contact Portfolio');
       var body = encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\n' + message);
       window.open('mailto:khalidberrada2007@gmail.com?subject=' + subject + '&body=' + body, '_blank');
-      self.showToast('Message envoy\u00e9 par email de secours. ?', 'success');
+      self.showToast(t('toast.fallback'), 'success');
       self.form.reset();
     })
     .finally(function () {
@@ -1056,8 +1540,8 @@
   };
 
   ContactForm.prototype.showSuccessModal = function (name) {
-    // Show a success toast with the name
-    var msg = 'Merci ' + name + ' ! Votre message a bien \u00e9t\u00e9 envoy\u00e9. Je vous r\u00e9pondrai rapidement. \u2728';
+    var t = window.i18n.t.bind(window.i18n);
+    var msg = t('toast.success') + name + t('toast.success2');
     this.showToast(msg, 'success');
   };
 
@@ -1090,9 +1574,9 @@
             btn.innerHTML = original;
             btn.style.color = '';
           }, 1800);
-          if (window.toast) window.toast.show('Copi\u00e9 dans le presse-papier !');
+          if (window.toast) window.toast.show(window.i18n.t('toast.copied'));
         }).catch(function () {
-          if (window.toast) window.toast.show('Impossible de copier.', 'error');
+          if (window.toast) window.toast.show(window.i18n.t('toast.copyError'), 'error');
         });
       });
     });
@@ -1287,6 +1771,7 @@
   // ========================================================================
 
   function init() {
+    var i18nManager = new I18n();
     var preloader = new Preloader();
     var theme = new ThemeManager();
     var mobileMenu = new MobileMenu();
@@ -1309,6 +1794,7 @@
     var staggerAnim = new StaggerAnim();
 
     // Globals
+    window.i18nManager = i18nManager;
     window.theme = theme;
     window.terminal = terminal;
     window.cmdk = cmdk;
@@ -1319,6 +1805,7 @@
     // Init order
     toast.init();
     footerYear.init();
+    i18nManager.init();   // apply translations first
     theme.init();
     mobileMenu.init();
     scrollManager.init();

@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Khalid Barradah — ENCGJ Student &amp; Digital Development @OFPPT. Web Development • Digital &amp; Business Enthusiast. À la recherche d'un stage à El Jadida / Casablanca.">
+  <meta id="metaDescription" name="description" content="Portfolio de Khalid Barradah — ENCGJ Student &amp; Digital Development @OFPPT. Web Development • Digital &amp; Business Enthusiast. À la recherche d'un stage à El Jadida / Casablanca.">
   <meta name="keywords" content="Khalid Barradah, développeur web, portfolio, stage, El Jadida, Casablanca, ENCGJ, OFPPT, Python, PHP, JavaScript, ENCG, business, digital">
   <meta name="author" content="Khalid Barradah">
   <meta name="robots" content="index, follow">
-  <title>Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer</title>
+  <title id="pageTitle">Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer</title>
 
   <!-- Canonical -->
   <link rel="canonical" href="https://portfolio-ecru-three-47.vercel.app">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer">
-  <meta property="og:description" content="Étudiant ENCGJ &amp; Développement Digital @OFPPT — Web Development • Digital &amp; Business Enthusiast. Recherche de stage.">
+  <meta id="ogTitle" property="og:title" content="Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer">
+  <meta id="ogDescription" property="og:description" content="Étudiant ENCGJ &amp; Développement Digital @OFPPT — Web Development • Digital &amp; Business Enthusiast. Recherche de stage.">
   <meta property="og:image" content="photo.png">
   <meta property="og:url" content="https://portfolio-ecru-three-47.vercel.app">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer">
+  <meta id="twitterTitle" name="twitter:title" content="Khalid Barradah | ENCGJ Student • Digital Development @OFPPT • Web Developer">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1520'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' fill='%23e3a63a' text-anchor='middle'%3EKB%3C/text%3E%3C/svg%3E">
@@ -54,12 +54,12 @@
 <body>
 
   <!-- ===== PRELOADER ===== -->
-  <div id="preloader" class="preloader" role="status" aria-label="Chargement">
+  <div id="preloader" class="preloader" role="status" aria-label="Chargement" data-i18n-attr="aria-label:preloader.label">
     <div class="preloader-content">
       <div class="preloader-terminal">
-        <span class="preloader-line" data-text="Initialisation du portfolio..."></span>
-        <span class="preloader-line" data-text="Chargement des competences..."></span>
-        <span class="preloader-line" data-text="Pret."></span>
+        <span class="preloader-line" data-i18n="preloader.line1" data-text="Initialisation du portfolio..."></span>
+        <span class="preloader-line" data-i18n="preloader.line2" data-text="Chargement des competences..."></span>
+        <span class="preloader-line" data-i18n="preloader.line3" data-text="Pret."></span>
       </div>
       <div class="preloader-bar">
         <div class="preloader-bar-fill" id="preloader-bar"></div>
@@ -72,29 +72,33 @@
 
   <!-- ===== HEADER / NAV ===== -->
   <header class="header" id="header">
-    <nav class="container nav-bar" role="navigation" aria-label="Navigation principale">
-      <a href="#home" class="brand" aria-label="Retour à l'accueil">
+    <nav class="container nav-bar" role="navigation" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.label">
+<a href="#home" class="brand" aria-label="Retour à l'accueil" data-i18n-attr="aria-label:nav.backToStart">
         <span class="brand-dot"></span>
         khalid.barradah
       </a>
 
       <ul class="nav-links" role="menubar">
-        <li role="none"><a href="#home" class="nav-link active" role="menuitem">Accueil</a></li>
-        <li role="none"><a href="#about" class="nav-link" role="menuitem">À propos</a></li>
-        <li role="none"><a href="#skills" class="nav-link" role="menuitem">Compétences</a></li>
-        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projets</a></li>
-        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+        <li role="none"><a href="#home" class="nav-link active" role="menuitem" data-i18n="nav.home">Accueil</a></li>
+        <li role="none"><a href="#about" class="nav-link" role="menuitem" data-i18n="nav.about">À propos</a></li>
+        <li role="none"><a href="#skills" class="nav-link" role="menuitem" data-i18n="nav.skills">Compétences</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem" data-i18n="nav.projects">Projets</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem" data-i18n="nav.contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button type="button" id="themeToggle" class="icon-btn" aria-label="Changer le thème">
+        <div class="lang-switch" role="group" aria-label="Changer la langue" data-i18n-attr="aria-label:lang.label">
+          <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true" aria-label="Passer au français" data-i18n-attr="aria-label:lang.frLabel">FR</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="Switch to English" data-i18n-attr="aria-label:lang.enLabel">EN</button>
+        </div>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Changer le thème" data-i18n-attr="aria-label:nav.theme">
           <i class="fas fa-sun" id="themeIcon"></i>
         </button>
-        <button type="button" id="cmdkTrigger" class="icon-btn cmdk-btn" aria-label="Ouvrir la palette de commandes">
+        <button type="button" id="cmdkTrigger" class="icon-btn cmdk-btn" aria-label="Ouvrir la palette de commandes" data-i18n-attr="aria-label:nav.palette">
           <i class="fas fa-command"></i>
           <span class="cmdk-hint"><kbd>⌘</kbd><kbd>K</kbd></span>
         </button>
-        <button type="button" class="menu-toggle icon-btn" id="menuToggle" aria-label="Menu mobile" aria-expanded="false">
+        <button type="button" class="menu-toggle icon-btn" id="menuToggle" aria-label="Menu mobile" aria-expanded="false" data-i18n-attr="aria-label:nav.menu">
           <span class="hamburger"></span>
         </button>
       </div>
@@ -111,19 +115,19 @@
         <div class="hero-text fade-up">
           <div class="hero-badge">
             <span class="badge-dot"></span>
-            Disponible pour un stage
+            <span data-i18n="hero.badge">Disponible pour un stage</span>
           </div>
-          <p class="eyebrow">// étudiant encgj & développement digital — el jadida, ma</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">// étudiant encgj & développement digital — el jadida, ma</p>
           <h1 class="hero-title">
-            Bonjour, je suis <br>
+            <span data-i18n="hero.title1">Bonjour, je suis</span> <br>
             <span class="gradient-text">Khalid Barradah</span>
           </h1>
           <div class="hero-typing-wrapper">
-            <span id="typingPrefix" class="typing-prefix">Je suis </span>
+            <span id="typingPrefix" class="typing-prefix" data-i18n="hero.typingPrefix">Je suis </span>
             <span id="typingText" class="typing-text"></span>
             <span class="typing-cursor" id="typingCursor">|</span>
           </div>
-          <p class="hero-description">
+<p class="hero-description" data-i18n="hero.description" data-i18n-html="hero.description">
             Étudiant à l'<strong>ENCGJ</strong> & <strong>Développement Digital @OFPPT</strong>
             — Je transforme des idées en applications complètes, de la logique métier jusqu'à l'interface.
             Actuellement à la recherche d'un stage pour mettre mes compétences
@@ -131,27 +135,27 @@
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
-              Voir mes projets
+              <span data-i18n="hero.ctaProjects">Voir mes projets</span>
               <i class="fas fa-arrow-right"></i>
             </a>
             <a href="KHALID_BARRADAH_CV.pdf" class="btn btn-outline" download>
               <i class="fas fa-download"></i>
-              Télécharger mon CV
+              <span data-i18n="hero.ctaCv">Télécharger mon CV</span>
             </a>
           </div>
 
           <div class="hero-stats">
             <div class="hero-stat">
               <span class="hero-stat-value" data-count="4">0</span>
-              <span class="hero-stat-label">Projets</span>
+              <span class="hero-stat-label" data-i18n="hero.statProjects">Projets</span>
             </div>
             <div class="hero-stat">
               <span class="hero-stat-value" data-count="2">0</span>
-              <span class="hero-stat-label">Technos</span>
+              <span class="hero-stat-label" data-i18n="hero.statTechs">Technos</span>
             </div>
             <div class="hero-stat">
               <span class="hero-stat-value" data-count="100">0</span>
-              <span class="hero-stat-label">% Motivation</span>
+              <span class="hero-stat-label" data-i18n="hero.statMotivation">% Motivation</span>
             </div>
           </div>
         </div>
@@ -170,11 +174,13 @@
               <div id="terminalOutput" class="terminal-output"></div>
               <div class="terminal-input-line" id="terminalInputLine" hidden>
                 <span class="terminal-prompt">$</span>
-                <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal interactif — tapez une commande">
+                <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal interactif — tapez une commande" data-i18n-attr="aria-label:hero.terminalLabel">
               </div>
             </div>
             <div class="terminal-footer">
-              <span class="terminal-hint">Tapez <kbd>help</kbd> pour les commandes</span>
+              <span class="terminal-hint">
+                <span data-i18n="hero.terminalHint">Tapez</span> <kbd>help</kbd> <span data-i18n="hero.terminalHint2">pour les commandes</span>
+              </span>
             </div>
           </div>
 
@@ -192,7 +198,7 @@
       </div>
 
       <div class="scroll-indicator" aria-hidden="true">
-        <span>Scroll</span>
+        <span data-i18n="hero.scroll">Scroll</span>
         <div class="scroll-mouse">
           <div class="scroll-wheel"></div>
         </div>
@@ -203,21 +209,24 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-header fade-up">
-          <p class="eyebrow">// à propos</p>
-          <h2>Je transforme l'apprentissage en <span class="gradient-text">réalisations concrètes.</span></h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">// à propos</p>
+          <h2>
+            <span data-i18n="about.title1">Je transforme l'apprentissage en</span>
+            <span class="gradient-text" data-i18n="about.title2">réalisations concrètes.</span>
+          </h2>
           <div class="section-divider"></div>
         </div>
 
         <div class="about-grid">
           <div class="about-content fade-up">
-            <p class="about-text">
+<p class="about-text" data-i18n="about.text1" data-i18n-html="about.text1">
               Étudiant en 1ère année à l'<strong>ENCG El Jadida</strong> (École Nationale de Commerce et de Gestion)
               et en <strong>Développement Digital @OFPPT</strong>, avec une formation en développement web
               à l'ISTA HH1 Casablanca comme background technique. Titulaire d'un baccalauréat
               Sciences Mathématiques B (mention Bien). Je conçois des interfaces claires et des
               solutions robustes — du script Python à l'application web complète.
             </p>
-            <p class="about-text">
+<p class="about-text" data-i18n="about.text2" data-i18n-html="about.text2">
               Ma vision : allier <strong>compétences techniques</strong> (dev web, Python, PHP, JavaScript)
               et <strong>vision business &amp; management</strong> acquise à l'ENCGJ pour créer des solutions
               numériques à fort impact. Mon expérience chez McDonald's m'a appris la <strong>rigueur</strong>,
@@ -229,36 +238,36 @@
               <div class="about-info-item">
                 <span class="info-icon"><i class="fas fa-map-pin"></i></span>
                 <div>
-                  <span class="info-label">Localisation</span>
-                  <span class="info-value">El Jadida / Casablanca, Maroc</span>
+                  <span class="info-label" data-i18n="about.info.location">Localisation</span>
+                  <span class="info-value" data-i18n="about.info.locationVal">El Jadida / Casablanca, Maroc</span>
                 </div>
               </div>
               <div class="about-info-item">
                 <span class="info-icon"><i class="fas fa-graduation-cap"></i></span>
                 <div>
-                  <span class="info-label">Formation</span>
-                  <span class="info-value">ENCGJ &amp; OFPPT — Développement Digital</span>
+                  <span class="info-label" data-i18n="about.info.education">Formation</span>
+                  <span class="info-value" data-i18n="about.info.educationVal">ENCGJ &amp; OFPPT — Développement Digital</span>
                 </div>
               </div>
               <div class="about-info-item">
                 <span class="info-icon"><i class="fas fa-calendar"></i></span>
                 <div>
-                  <span class="info-label">Niveau</span>
-                  <span class="info-value">1ère année ENCGJ &amp; OFPPT (2025–2026)</span>
+                  <span class="info-label" data-i18n="about.info.level">Niveau</span>
+                  <span class="info-value" data-i18n="about.info.levelVal">1ère année ENCGJ &amp; OFPPT (2025–2026)</span>
                 </div>
               </div>
               <div class="about-info-item">
                 <span class="info-icon"><i class="fas fa-trophy"></i></span>
                 <div>
-                  <span class="info-label">Bac</span>
-                  <span class="info-value">Sciences Math B — 14,97/20</span>
+                  <span class="info-label" data-i18n="about.info.bac">Bac</span>
+                  <span class="info-value" data-i18n="about.info.bacVal">Sciences Math B — 14,97/20</span>
                 </div>
               </div>
               <div class="about-info-item">
                 <span class="info-icon"><i class="fas fa-briefcase"></i></span>
                 <div>
-                  <span class="info-label">Statut</span>
-                  <span class="info-value">Recherche de stage</span>
+                  <span class="info-label" data-i18n="about.info.status">Statut</span>
+                  <span class="info-value" data-i18n="about.info.statusVal">Recherche de stage</span>
                 </div>
               </div>
             </div>
@@ -272,7 +281,7 @@
               </div>
               <div class="photo-status">
                 <span class="status-dot"></span>
-                Disponible
+                <span data-i18n="about.status">Disponible</span>
               </div>
             </div>
 
@@ -283,13 +292,13 @@
               </div>
               <div class="env-body">
                 <div class="env-line">
-                  <span class="env-key">export</span> <span class="env-var">LOCATION</span>=<span class="env-val">"El Jadida/Casablanca, Maroc"</span>
+                  <span class="env-key">export</span> <span class="env-var">LOCATION</span>=<span class="env-val" data-i18n="about.env.location">"El Jadida/Casablanca, Maroc"</span>
                 </div>
                 <div class="env-line">
-                  <span class="env-key">export</span> <span class="env-var">FORMATION</span>=<span class="env-val">"ENCGJ &amp; OFPPT — Dev Digital"</span>
+                  <span class="env-key">export</span> <span class="env-var">FORMATION</span>=<span class="env-val" data-i18n="about.env.education">"ENCGJ &amp; OFPPT — Dev Digital"</span>
                 </div>
                 <div class="env-line">
-                  <span class="env-key">export</span> <span class="env-var">STATUS</span>=<span class="env-val">"Recherche de stage"</span>
+                  <span class="env-key">export</span> <span class="env-var">STATUS</span>=<span class="env-val" data-i18n="about.env.status">"Recherche de stage"</span>
                 </div>
                 <div class="env-line">
                   <span class="env-key">export</span> <span class="env-var">MOTIVATION</span>=<span class="env-val">∞</span>
@@ -305,16 +314,19 @@
     <section id="skills" class="section section-alt">
       <div class="container">
         <div class="section-header fade-up">
-          <p class="eyebrow">// compétences</p>
-          <h2>Des bases solides pour construire <span class="gradient-text">de vrais projets.</span></h2>
+          <p class="eyebrow" data-i18n="skills.eyebrow">// compétences</p>
+          <h2>
+            <span data-i18n="skills.title1">Des bases solides pour construire</span>
+            <span class="gradient-text" data-i18n="skills.title2">de vrais projets.</span>
+          </h2>
           <div class="section-divider"></div>
         </div>
 
         <div class="skills-filter fade-up">
-          <button type="button" class="filter-btn active" data-filter="all">Tous</button>
-          <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
-          <button type="button" class="filter-btn" data-filter="backend">Backend</button>
-          <button type="button" class="filter-btn" data-filter="tools">Outils</button>
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="skills.filterAll">Tous</button>
+          <button type="button" class="filter-btn" data-filter="frontend" data-i18n="skills.filterFrontend">Frontend</button>
+          <button type="button" class="filter-btn" data-filter="backend" data-i18n="skills.filterBackend">Backend</button>
+          <button type="button" class="filter-btn" data-filter="tools" data-i18n="skills.filterTools">Outils</button>
         </div>
 
         <div class="skills-grid" id="skillsGrid">
@@ -327,7 +339,7 @@
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="90"></div>
             </div>
-            <span class="skill-level">Avancé</span>
+            <span class="skill-level" data-i18n="skills.level.advanced">Avancé</span>
           </div>
 
           <div class="skill-card fade-up" data-category="frontend">
@@ -338,7 +350,7 @@
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="85"></div>
             </div>
-            <span class="skill-level">Avancé</span>
+            <span class="skill-level" data-i18n="skills.level.advanced">Avancé</span>
           </div>
 
           <div class="skill-card fade-up" data-category="frontend">
@@ -349,30 +361,30 @@
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="75"></div>
             </div>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-i18n="skills.level.intermediate">Intermédiaire</span>
           </div>
 
           <div class="skill-card fade-up" data-category="frontend">
             <div class="skill-header">
               <span class="skill-icon"><i class="fas fa-mobile-alt"></i></span>
-              <h3>Responsive</h3>
+              <h3 data-i18n="skills.responsive">Responsive</h3>
             </div>
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="80"></div>
             </div>
-            <span class="skill-level">Avancé</span>
+            <span class="skill-level" data-i18n="skills.level.advanced">Avancé</span>
           </div>
 
           <!-- Backend -->
           <div class="skill-card fade-up" data-category="backend">
             <div class="skill-header">
               <span class="skill-icon"><i class="fab fa-python"></i></span>
-              <h3>Python (POO)</h3>
+              <h3 data-i18n="skills.python">Python (POO)</h3>
             </div>
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="80"></div>
             </div>
-            <span class="skill-level">Intermédiaire+</span>
+            <span class="skill-level" data-i18n="skills.level.intermediatePlus">Intermédiaire+</span>
           </div>
 
           <div class="skill-card fade-up" data-category="backend">
@@ -383,30 +395,30 @@
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="70"></div>
             </div>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-i18n="skills.level.intermediate">Intermédiaire</span>
           </div>
 
           <div class="skill-card fade-up" data-category="backend">
             <div class="skill-header">
               <span class="skill-icon"><i class="fas fa-database"></i></span>
-              <h3>MySQL / SQL</h3>
+              <h3 data-i18n="skills.sql">MySQL / SQL</h3>
             </div>
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="75"></div>
             </div>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-i18n="skills.level.intermediate">Intermédiaire</span>
           </div>
 
           <!-- Tools -->
           <div class="skill-card fade-up" data-category="tools">
             <div class="skill-header">
               <span class="skill-icon"><i class="fab fa-git-alt"></i></span>
-              <h3>Git & GitHub</h3>
+              <h3 data-i18n="skills.git">Git & GitHub</h3>
             </div>
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="75"></div>
             </div>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-i18n="skills.level.intermediate">Intermédiaire</span>
           </div>
 
           <div class="skill-card fade-up" data-category="tools">
@@ -417,18 +429,18 @@
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="60"></div>
             </div>
-            <span class="skill-level">Débutant</span>
+            <span class="skill-level" data-i18n="skills.level.beginner">Débutant</span>
           </div>
 
           <div class="skill-card fade-up" data-category="tools">
             <div class="skill-header">
               <span class="skill-icon"><i class="fas fa-shield-alt"></i></span>
-              <h3>Cybersécurité</h3>
+              <h3 data-i18n="skills.cyber">Cybersécurité</h3>
             </div>
             <div class="skill-bar">
               <div class="skill-bar-fill" data-width="50"></div>
             </div>
-            <span class="skill-level">Initiation</span>
+            <span class="skill-level" data-i18n="skills.level.basic">Initiation</span>
           </div>
         </div>
       </div>
@@ -438,8 +450,11 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header fade-up">
-          <p class="eyebrow">// projets</p>
-          <h2>Quelques <span class="gradient-text">réalisations récentes.</span></h2>
+          <p class="eyebrow" data-i18n="projects.eyebrow">// projets</p>
+          <h2>
+            <span data-i18n="projects.title1">Quelques</span>
+            <span class="gradient-text" data-i18n="projects.title2">réalisations récentes.</span>
+          </h2>
           <div class="section-divider"></div>
         </div>
 
@@ -457,24 +472,24 @@
               </div>
             </div>
             <div class="project-image">
-              <img src="StageMaroc.png" alt="StageMaroc - Plateforme de stages" loading="lazy">
+              <img src="StageMaroc.png" alt="StageMaroc - Plateforme de stages" loading="lazy" data-i18n-attr="alt:projects.stageMaroc.alt">
               <div class="project-overlay">
                 <a href="https://github.com/khalidberrada2007-dotcom/StageMaroc" target="_blank" rel="noopener" class="project-overlay-link">
-                  <i class="fab fa-github"></i> Voir le code
+                  <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Voir le code</span>
                 </a>
               </div>
             </div>
             <div class="project-body">
               <div class="repo-stats" aria-live="polite"></div>
               <h3>StageMaroc</h3>
-              <p>Plateforme de mise en relation stagiaires-entreprises avec publication d'offres et gestion des candidatures.</p>
+              <p data-i18n="projects.stageMaroc.desc">Plateforme de mise en relation stagiaires-entreprises avec publication d'offres et gestion des candidatures.</p>
               <div class="project-tags">
                 <span class="tag">PHP</span>
                 <span class="tag">MySQL</span>
                 <span class="tag">JavaScript</span>
               </div>
               <a href="https://github.com/khalidberrada2007-dotcom/StageMaroc" target="_blank" rel="noopener" class="project-link">
-                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+                <span data-i18n="projects.viewGithub">Voir sur GitHub</span> <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -491,24 +506,24 @@
               </div>
             </div>
             <div class="project-image">
-              <img src="GestionDesStagiaires.png" alt="Gestion des Stagiaires OFPPT" loading="lazy">
+              <img src="GestionDesStagiaires.png" alt="Gestion des Stagiaires OFPPT" loading="lazy" data-i18n-attr="alt:projects.gestionStagiaires.alt">
               <div class="project-overlay">
                 <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-stagiaires" target="_blank" rel="noopener" class="project-overlay-link">
-                  <i class="fab fa-github"></i> Voir le code
+                  <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Voir le code</span>
                 </a>
               </div>
             </div>
             <div class="project-body">
               <div class="repo-stats" aria-live="polite"></div>
-              <h3>Gestion des Stagiaires OFPPT</h3>
-              <p>Application console Python orientée objet : gestion des stagiaires, suivi des absences, sauvegarde JSON et export CSV.</p>
+              <h3 data-i18n="projects.gestionStagiaires.title">Gestion des Stagiaires OFPPT</h3>
+              <p data-i18n="projects.gestionStagiaires.desc">Application console Python orientée objet : gestion des stagiaires, suivi des absences, sauvegarde JSON et export CSV.</p>
               <div class="project-tags">
                 <span class="tag">Python</span>
                 <span class="tag">POO</span>
                 <span class="tag">JSON/CSV</span>
               </div>
               <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-stagiaires" target="_blank" rel="noopener" class="project-link">
-                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+                <span data-i18n="projects.viewGithub">Voir sur GitHub</span> <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -525,24 +540,24 @@
               </div>
             </div>
             <div class="project-image">
-              <img src="CalculatriceWebInteractive.png" alt="Calculatrice Web Interactive" loading="lazy">
+              <img src="CalculatriceWebInteractive.png" alt="Calculatrice Web Interactive" loading="lazy" data-i18n-attr="alt:projects.calculatrice.alt">
               <div class="project-overlay">
                 <a href="https://github.com/khalidberrada2007-dotcom/Calculatrice-Web" target="_blank" rel="noopener" class="project-overlay-link">
-                  <i class="fab fa-github"></i> Voir le code
+                  <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Voir le code</span>
                 </a>
               </div>
             </div>
             <div class="project-body">
               <div class="repo-stats" aria-live="polite"></div>
-              <h3>Calculatrice Web Interactive</h3>
-              <p>Application front-end en HTML5, CSS3 et JavaScript avec une expérience de calcul fluide et design moderne.</p>
+              <h3 data-i18n="projects.calculatrice.title">Calculatrice Web Interactive</h3>
+              <p data-i18n="projects.calculatrice.desc">Application front-end en HTML5, CSS3 et JavaScript avec une expérience de calcul fluide et design moderne.</p>
               <div class="project-tags">
                 <span class="tag">HTML5</span>
                 <span class="tag">CSS3</span>
                 <span class="tag">JavaScript</span>
               </div>
               <a href="https://github.com/khalidberrada2007-dotcom/Calculatrice-Web" target="_blank" rel="noopener" class="project-link">
-                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+                <span data-i18n="projects.viewGithub">Voir sur GitHub</span> <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -559,24 +574,24 @@
               </div>
             </div>
             <div class="project-image">
-              <img src="GestionDesCandidats.png" alt="Gestion des Candidats" loading="lazy">
+              <img src="GestionDesCandidats.png" alt="Gestion des Candidats" loading="lazy" data-i18n-attr="alt:projects.gestionCandidats.alt">
               <div class="project-overlay">
                 <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" target="_blank" rel="noopener" class="project-overlay-link">
-                  <i class="fab fa-github"></i> Voir le code
+                  <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Voir le code</span>
                 </a>
               </div>
             </div>
             <div class="project-body">
               <div class="repo-stats" aria-live="polite"></div>
-              <h3>Gestion des Candidats</h3>
-              <p>Application CRUD complète en PHP/MySQL : ajout, affichage, modification et suppression de fiches candidats.</p>
+              <h3 data-i18n="projects.gestionCandidats.title">Gestion des Candidats</h3>
+              <p data-i18n="projects.gestionCandidats.desc">Application CRUD complète en PHP/MySQL : ajout, affichage, modification et suppression de fiches candidats.</p>
               <div class="project-tags">
                 <span class="tag">PHP</span>
                 <span class="tag">MySQL</span>
                 <span class="tag">CRUD</span>
               </div>
               <a href="https://github.com/khalidberrada2007-dotcom/Gestion-des-Candidats-CRUD-PHP-MySQL" target="_blank" rel="noopener" class="project-link">
-                Voir sur GitHub <i class="fas fa-arrow-right"></i>
+                <span data-i18n="projects.viewGithub">Voir sur GitHub</span> <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -591,11 +606,14 @@
         <div class="contact-wrapper fade-up">
           <div class="contact-info">
             <div class="section-header">
-              <p class="eyebrow">// contact</p>
-              <h2>Discutons de votre <span class="gradient-text">prochain projet.</span></h2>
+              <p class="eyebrow" data-i18n="contact.eyebrow">// contact</p>
+              <h2>
+                <span data-i18n="contact.title1">Discutons de votre</span>
+                <span class="gradient-text" data-i18n="contact.title2">prochain projet.</span>
+              </h2>
               <div class="section-divider"></div>
             </div>
-            <p class="contact-description">
+            <p class="contact-description" data-i18n="contact.description">
               Vous avez un projet en tête, une opportunité de stage, ou simplement envie d'échanger ?
               Je suis à l'écoute. N'hésitez pas à me contacter via le formulaire ou directement par email.
             </p>
@@ -604,20 +622,20 @@
               <a href="mailto:khalidberrada2007@gmail.com" class="contact-channel">
                 <span class="channel-icon"><i class="fas fa-envelope"></i></span>
                 <span class="channel-info">
-                  <span class="channel-label">Email</span>
+                  <span class="channel-label" data-i18n="contact.email">Email</span>
                   <span class="channel-value">khalidberrada2007@gmail.com</span>
                 </span>
-                <button type="button" class="channel-copy" data-copy="khalidberrada2007@gmail.com" aria-label="Copier l'email">
+                <button type="button" class="channel-copy" data-copy="khalidberrada2007@gmail.com" aria-label="Copier l'email" data-i18n-attr="aria-label:contact.copyEmail">
                   <i class="fas fa-copy"></i>
                 </button>
               </a>
               <a href="mailto:baradak087@gmail.com" class="contact-channel">
                 <span class="channel-icon"><i class="fas fa-envelope"></i></span>
                 <span class="channel-info">
-                  <span class="channel-label">Email secondaire</span>
+                  <span class="channel-label" data-i18n="contact.emailSecondary">Email secondaire</span>
                   <span class="channel-value">baradak087@gmail.com</span>
                 </span>
-                <button type="button" class="channel-copy" data-copy="baradak087@gmail.com" aria-label="Copier l'email">
+                <button type="button" class="channel-copy" data-copy="baradak087@gmail.com" aria-label="Copier l'email" data-i18n-attr="aria-label:contact.copyEmail">
                   <i class="fas fa-copy"></i>
                 </button>
               </a>
@@ -643,29 +661,29 @@
           <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkgjbyqv" method="POST">
             <div class="form-header">
               <span class="form-dot"></span>
-              <span>Nouveau message</span>
+              <span data-i18n="contact.formTitle">Nouveau message</span>
             </div>
             <div class="form-body">
               <div class="form-group">
-                <label for="formName">Nom complet</label>
-                <input type="text" id="formName" name="name" required placeholder="Votre nom" autocomplete="name">
+                <label for="formName" data-i18n="contact.name">Nom complet</label>
+                <input type="text" id="formName" name="name" required placeholder="Votre nom" autocomplete="name" data-i18n-attr="placeholder:contact.namePlaceholder">
               </div>
               <div class="form-group">
-                <label for="formEmail">Email</label>
-                <input type="email" id="formEmail" name="email" required placeholder="vous@exemple.com" autocomplete="email">
+                <label for="formEmail" data-i18n="contact.emailLabel">Email</label>
+                <input type="email" id="formEmail" name="email" required placeholder="vous@exemple.com" autocomplete="email" data-i18n-attr="placeholder:contact.emailPlaceholder">
               </div>
               <div class="form-group">
-                <label for="formSubject">Sujet</label>
-                <input type="text" id="formSubject" name="subject" placeholder="Sujet du message">
+                <label for="formSubject" data-i18n="contact.subject">Sujet</label>
+                <input type="text" id="formSubject" name="subject" placeholder="Sujet du message" data-i18n-attr="placeholder:contact.subjectPlaceholder">
               </div>
               <div class="form-group">
-                <label for="formMessage">Message</label>
-                <textarea id="formMessage" name="message" required rows="5" placeholder="Votre message..."></textarea>
+                <label for="formMessage" data-i18n="contact.message">Message</label>
+                <textarea id="formMessage" name="message" required rows="5" placeholder="Votre message..." data-i18n-attr="placeholder:contact.messagePlaceholder"></textarea>
               </div>
               <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
-                <span class="submit-text">Envoyer le message</span>
+                <span class="submit-text" data-i18n="contact.submit">Envoyer le message</span>
                 <span class="submit-loading" hidden>
-                  <i class="fas fa-spinner fa-spin"></i> Envoi...
+                  <i class="fas fa-spinner fa-spin"></i> <span data-i18n="contact.sending">Envoi...</span>
                 </span>
                 <i class="fas fa-paper-plane"></i>
               </button>
@@ -685,7 +703,7 @@
         khalid.barradah
       </div>
       <p class="footer-copy">
-        © <span id="year"></span> — Tous droits réservés. Construit avec <i class="fas fa-heart" style="color: var(--color-accent);"></i> et <i class="fas fa-coffee"></i>
+        © <span id="year"></span> — <span data-i18n="footer.rights">Tous droits réservés.</span> <span data-i18n="footer.build">Construit avec</span> <i class="fas fa-heart" style="color: var(--color-accent);"></i> <span data-i18n="footer.and">et</span> <i class="fas fa-coffee"></i>
       </p>
       <div class="footer-links">
         <a href="https://github.com/khalidberrada2007-dotcom" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -699,31 +717,31 @@
   <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-backdrop" onclick="closeImageModal()"></div>
     <div class="modal-content">
-      <button class="modal-close" type="button" aria-label="Fermer" onclick="closeImageModal()">
+      <button class="modal-close" type="button" aria-label="Fermer" data-i18n-attr="aria-label:modal.close" onclick="closeImageModal()">
         <i class="fas fa-times"></i>
       </button>
       <div class="modal-image-wrapper">
-        <img src="photo.png" alt="Khalid Barradah - Portrait" onerror="this.style.display='none'; this.parentElement.querySelector('.modal-fallback').style.display='flex';">
+        <img src="photo.png" alt="Khalid Barradah - Portrait" data-i18n-attr="alt:modal.alt" onerror="this.style.display='none'; this.parentElement.querySelector('.modal-fallback').style.display='flex';">
         <div class="modal-fallback">Khalid Barradah</div>
       </div>
     </div>
   </div>
 
   <!-- ===== COMMAND PALETTE ===== -->
-  <div class="cmdk-overlay" id="cmdkOverlay" role="dialog" aria-modal="true" aria-label="Palette de commandes" hidden>
+  <div class="cmdk-overlay" id="cmdkOverlay" role="dialog" aria-modal="true" aria-label="Palette de commandes" data-i18n-attr="aria-label:palette.label" hidden>
     <div class="cmdk-backdrop" onclick="closeCmdk()"></div>
     <div class="cmdk-box">
       <div class="cmdk-search">
         <i class="fas fa-search"></i>
-        <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Tapez une commande ou une section…" autocomplete="off" spellcheck="false">
+        <input type="text" id="cmdkInput" class="cmdk-input" placeholder="Tapez une commande ou une section…" autocomplete="off" spellcheck="false" data-i18n-attr="placeholder:palette.placeholder">
         <div class="cmdk-search-hint">
-          <kbd>esc</kbd> fermer
+          <kbd>esc</kbd> <span data-i18n="palette.close">fermer</span>
         </div>
       </div>
       <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>
       <div class="cmdk-footer">
-        <span><kbd>↑</kbd><kbd>↓</kbd> Naviguer</span>
-        <span><kbd>↩</kbd> Ouvrir</span>
+        <span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="palette.navigate">Naviguer</span></span>
+        <span><kbd>↩</kbd> <span data-i18n="palette.open">Ouvrir</span></span>
       </div>
     </div>
   </div>
@@ -732,7 +750,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <!-- ===== BACK TO TOP ===== -->
-  <button id="backToTop" class="back-to-top" type="button" aria-label="Retour en haut">
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Retour en haut" data-i18n-attr="aria-label:nav.backToTop">
     <i class="fas fa-arrow-up"></i>
   </button>
 
@@ -740,4 +758,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
